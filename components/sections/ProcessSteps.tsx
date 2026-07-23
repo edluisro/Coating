@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/Card";
+import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const steps = [
@@ -11,12 +12,10 @@ export function ProcessSteps() {
   return (
     <section className="process section" id="proceso" aria-labelledby="process-title">
       <div className="container">
-        <SectionHeading
-          align="center"
-          eyebrow="Proceso"
-          title="Tres pasos para lanzar sin friccion."
-        />
-        <div className="process__grid">
+        <Reveal>
+          <SectionHeading align="center" eyebrow="Proceso" title="Tres pasos para lanzar sin friccion." />
+        </Reveal>
+        <Reveal className="process__grid" stagger={100}>
           {steps.map(([title, text], index) => (
             <Card className="processCard" key={title}>
               <span className="processCard__step">{index + 1}</span>
@@ -24,7 +23,7 @@ export function ProcessSteps() {
               <p>{text}</p>
             </Card>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );
