@@ -131,16 +131,17 @@ p {
   left: 0;
   right: 0;
   z-index: 10;
-  background: transparent;
   color: white;
-  transition: background-color 0.28s var(--ease-standard), box-shadow 0.28s var(--ease-standard), color 0.28s var(--ease-standard), backdrop-filter 0.28s var(--ease-standard);
+  transition: color 0.28s var(--ease-standard);
 }
 
 .siteHeader.is-sticky {
-  background: rgba(255, 255, 255, 0.88);
   color: var(--color-ink);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.navShell {
+  width: min(100% - 28px, 1300px);
+  margin: 18px auto 0;
 }
 
 .mainNav {
@@ -148,7 +149,41 @@ p {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: var(--space-24);
-  min-height: 80px;
+  min-height: 90px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at top center, rgba(255, 255, 255, 0.07), transparent 34%),
+    rgba(14, 18, 28, 0.92);
+  box-shadow:
+    0 16px 42px rgba(4, 8, 18, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  padding: 0 22px;
+}
+
+.siteHeader.is-sticky .mainNav {
+  border-color: rgba(15, 23, 42, 0.08);
+  background:
+    radial-gradient(circle at top center, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.86)),
+    rgba(255, 255, 255, 0.88);
+  box-shadow:
+    0 18px 38px rgba(15, 23, 42, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.navGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navGroup--left {
+  justify-content: flex-start;
+}
+
+.navGroup--right {
+  justify-content: flex-end;
 }
 
 .brand,
@@ -162,22 +197,115 @@ p {
   font-size: var(--fs-h4);
 }
 
-.navLinks {
-  display: flex;
-  justify-content: center;
-  gap: clamp(16px, 3vw, 34px);
-  color: currentColor;
-  font-weight: var(--fw-medium);
+.brand--orb {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  min-width: 148px;
+  text-align: center;
 }
 
-.navLinks a,
+.brandText {
+  font-size: 0.78rem;
+  font-weight: var(--fw-semibold);
+  color: currentColor;
+  opacity: 0.92;
+}
+
+.brandOrb {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2), transparent 22%),
+    linear-gradient(180deg, #2f66f0, #1f4fca);
+  box-shadow:
+    0 18px 42px rgba(34, 95, 235, 0.3),
+    0 0 0 10px rgba(255, 255, 255, 0.04),
+    inset 0 -12px 24px rgba(5, 14, 40, 0.18);
+}
+
+.brandOrb__core {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 24px -16px 0 0 rgba(255, 255, 255, 0.34);
+}
+
+.brandOrb__dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  background: white;
+}
+
+.brandOrb__dot--top {
+  top: 24px;
+  left: 26px;
+}
+
+.brandOrb__dot--right {
+  right: 20px;
+  bottom: 22px;
+}
+
+.navPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  border-radius: var(--radius-pill);
+  padding: 0 18px;
+  color: currentColor;
+  font-size: 0.96rem;
+  font-weight: var(--fw-semibold);
+  transition: background-color 0.22s ease, color 0.22s ease, transform 0.22s ease;
+}
+
+.navPill:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-1px);
+}
+
+.siteHeader.is-sticky .navPill:hover {
+  background: rgba(15, 23, 42, 0.06);
+}
+
+.navPill,
+.navPill__icon,
+.mobileDrawer__panel a,
 .mobileDrawer a {
   outline-offset: 6px;
+}
+
+.navPill__icon {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  color: var(--color-accent);
+}
+
+.navPill__icon svg {
+  width: 20px;
+  height: 20px;
 }
 
 .navCta {
   display: flex;
   justify-content: flex-end;
+}
+
+.navCta .btn {
+  min-height: 54px;
+  padding-inline: 26px;
+  box-shadow: 0 16px 34px rgba(244, 123, 32, 0.22);
 }
 
 .menuToggle {
@@ -192,8 +320,8 @@ p {
 }
 
 .siteHeader.is-sticky .menuToggle {
-  border-color: var(--color-line);
-  background: white;
+  border-color: rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.88);
 }
 
 .menuToggle span {
@@ -1028,27 +1156,70 @@ p {
 
   .mainNav {
     grid-template-columns: 1fr auto;
-    min-height: 72px;
+    min-height: 78px;
+    padding-inline: 18px;
   }
 
-  .navLinks {
+  .navGroup,
+  .navCta,
+  .brandText {
     display: none;
   }
 
-  .navCta {
-    display: none;
+  .navShell {
+    width: min(100% - 20px, 1300px);
+    margin-top: 14px;
   }
 
   .menuToggle {
     display: grid;
   }
 
+  .brand--orb {
+    justify-items: start;
+    min-width: 0;
+  }
+
+  .brandOrb {
+    width: 62px;
+    height: 62px;
+    box-shadow:
+      0 10px 24px rgba(34, 95, 235, 0.24),
+      0 0 0 6px rgba(255, 255, 255, 0.04),
+      inset 0 -10px 20px rgba(5, 14, 40, 0.16);
+  }
+
+  .brandOrb__core {
+    width: 22px;
+    height: 22px;
+    box-shadow: 16px -10px 0 0 rgba(255, 255, 255, 0.34);
+  }
+
+  .brandOrb__dot {
+    width: 9px;
+    height: 9px;
+  }
+
+  .brandOrb__dot--top {
+    top: 17px;
+    left: 18px;
+  }
+
+  .brandOrb__dot--right {
+    right: 14px;
+    bottom: 15px;
+  }
+
   .mobileDrawer {
     position: fixed;
-    inset: 72px 0 0;
+    inset: 98px 12px 12px;
     display: grid;
-    background: rgba(255, 255, 255, 0.96);
-    color: var(--color-ink);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 32px;
+    background:
+      radial-gradient(circle at top center, rgba(255, 255, 255, 0.05), transparent 34%),
+      rgba(14, 18, 28, 0.96);
+    color: white;
     opacity: 0;
     pointer-events: none;
     transform: translateY(-12px);
@@ -1065,15 +1236,18 @@ p {
     display: grid;
     align-content: start;
     gap: var(--space-24);
-    padding-block: var(--space-32);
+    padding: var(--space-28) var(--space-24);
   }
 
   .mobileDrawer__panel a:not(.btn) {
-    border-bottom: 1px solid var(--color-border);
-    padding-block: var(--space-16);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-block: var(--space-18);
     font-family: var(--font-heading);
-    font-size: var(--fs-h3);
-    font-weight: var(--fw-bold);
+    font-size: 1.2rem;
+    font-weight: var(--fw-semibold);
   }
 
   .mobileDrawer__panel .btn {
