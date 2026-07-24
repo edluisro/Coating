@@ -593,6 +593,214 @@ p {
   font-size: var(--fs-h3);
 }
 
+.whyRestore {
+  background: var(--color-surface-alt);
+}
+
+.whyRestore__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: start;
+}
+
+.whyRestore__media {
+  align-self: center;
+}
+
+.whyRestore__splitFrame {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 620px;
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: var(--radius-xl);
+  background: white;
+  box-shadow: var(--shadow-md);
+}
+
+.whyRestore__scaleIn {
+  transform: scale(0.965);
+}
+
+.whyRestore__media.is-visible .whyRestore__scaleIn {
+  transform: scale(1);
+  transition: transform 800ms var(--ease-out-soft);
+}
+
+.whyRestore__splitHalf {
+  position: relative;
+  overflow: hidden;
+}
+
+.whyRestore__splitHalf::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 16, 31, 0.12), rgba(7, 16, 31, 0.36));
+}
+
+.whyRestore__splitHalf--before::after {
+  background:
+    linear-gradient(180deg, rgba(7, 16, 31, 0.24), rgba(7, 16, 31, 0.52)),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.22), transparent 60%);
+}
+
+.whyRestore__splitHalf--after::after {
+  background:
+    linear-gradient(180deg, rgba(13, 71, 161, 0.08), rgba(7, 16, 31, 0.26)),
+    linear-gradient(135deg, rgba(244, 123, 32, 0.16), transparent 58%);
+}
+
+.whyRestore__splitImage {
+  object-fit: cover;
+}
+
+.whyRestore__splitImage--before {
+  filter: saturate(0.45) contrast(0.88) brightness(0.78);
+}
+
+.whyRestore__splitDivider {
+  position: absolute;
+  top: 26px;
+  bottom: 26px;
+  left: 50%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.72);
+  transform: translateX(-50%);
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.08);
+}
+
+.whyRestore__splitLabel {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  z-index: 1;
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-pill);
+  background: rgba(7, 16, 31, 0.74);
+  color: white;
+  padding: 0 14px;
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.whyRestore__content {
+  max-width: 65ch;
+}
+
+.whyRestore__heading h2,
+.whyRestore__heading h3,
+.whyRestore__benefitsTitle {
+  max-width: 22ch;
+}
+
+.whyRestore__heading h3 {
+  color: var(--color-ink-soft);
+}
+
+.whyRestore__body p,
+.whyRestore__highlight p,
+.whyRestore__quote blockquote {
+  color: var(--color-ink-soft);
+}
+
+.whyRestore__benefitsBlock {
+  gap: var(--space-24);
+}
+
+.whyRestore__benefitsTitle {
+  margin-bottom: 0;
+}
+
+.whyRestore__benefits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-16) var(--space-20);
+}
+
+.whyRestore__benefitItem {
+  display: flex;
+  gap: var(--space-12);
+  align-items: flex-start;
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.86);
+  padding: 18px 18px 18px 16px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
+}
+
+.whyRestore__benefitIcon {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
+  border-radius: var(--radius-pill);
+  background: rgba(13, 71, 161, 0.08);
+  color: var(--color-accent);
+  font-size: 1rem;
+  font-weight: var(--fw-bold);
+}
+
+.whyRestore__benefitItem p {
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-weight: var(--fw-medium);
+  line-height: 1.55;
+}
+
+.whyRestore__quote {
+  border-left: 4px solid var(--color-accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  background: rgba(255, 255, 255, 0.72);
+  padding: 24px 26px;
+}
+
+.whyRestore__quote blockquote {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: var(--fw-semibold);
+  line-height: 1.45;
+}
+
+.whyRestore__highlightLift {
+  transition: transform 700ms var(--ease-out-soft), box-shadow 700ms var(--ease-out-soft);
+}
+
+.whyRestore__highlightLift.is-visible {
+  transform: translateY(-4px);
+}
+
+.whyRestore__highlight {
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 26px 56px rgba(8, 46, 105, 0.18);
+}
+
+.whyRestore__highlightInner {
+  padding: 32px;
+}
+
+.whyRestore__highlightLabel {
+  color: white;
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.whyRestore__highlight p:not(.whyRestore__highlightLabel) {
+  color: rgba(255, 255, 255, 0.84);
+}
+
 .services__grid,
 .process__grid {
   display: grid;
@@ -794,6 +1002,7 @@ p {
   }
 
   .hero__inner,
+  .whyRestore__grid,
   .trust__grid,
   .whyUs__grid,
   .bookingCta__grid {
@@ -814,6 +1023,20 @@ p {
 
   .hero__form {
     margin: 0;
+  }
+
+  .whyRestore__splitFrame {
+    min-height: 520px;
+  }
+
+  .whyRestore__content {
+    max-width: none;
+  }
+
+  .whyRestore__heading h2,
+  .whyRestore__heading h3,
+  .whyRestore__benefitsTitle {
+    max-width: none;
   }
 
   .services__grid {
@@ -904,6 +1127,33 @@ p {
 
   .hero__subheading {
     max-width: none;
+  }
+
+  .whyRestore__splitFrame {
+    min-height: 420px;
+    grid-template-columns: 1fr;
+  }
+
+  .whyRestore__splitHalf--before {
+    min-height: 210px;
+  }
+
+  .whyRestore__splitHalf--after {
+    min-height: 210px;
+  }
+
+  .whyRestore__splitDivider {
+    top: 50%;
+    bottom: auto;
+    left: 22px;
+    right: 22px;
+    width: auto;
+    height: 1px;
+    transform: translateY(-50%);
+  }
+
+  .whyRestore__benefits {
+    grid-template-columns: 1fr;
   }
 
   .trustRow--hero {

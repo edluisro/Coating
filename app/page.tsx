@@ -5,7 +5,7 @@ import { FinalCta } from "@/components/sections/FinalCta";
 import { HeroLead } from "@/components/sections/HeroLead";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
-import { TrustSection } from "@/components/sections/TrustSection";
+import { WhyRestoreSection } from "@/components/sections/WhyRestoreSection";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
       <Header />
       <main id="main-content">
         <HeroLead />
-        <TrustSection />
+        <WhyRestoreSection />
         <ServicesGrid />
         <ProcessSteps />
         <WhyChooseUs />
