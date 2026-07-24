@@ -12,35 +12,34 @@ const benefits = [
   "Improve the appearance and value of your commercial property.",
 ];
 
+const stackedImages = [
+  "whyRestore__card--back",
+  "whyRestore__card--middle",
+  "whyRestore__card--front",
+];
+
 export function WhyRestoreSection() {
   return (
     <section className="whyRestore section section--alt" aria-labelledby="why-restore-title">
       <div className="container whyRestore__grid">
-        <Reveal className="whyRestore__media" variant="fade-in">
-          <div className="whyRestore__splitFrame whyRestore__scaleIn" aria-label="Before and after metal restoration example">
-            <div className="whyRestore__splitHalf whyRestore__splitHalf--before">
+        <div className="whyRestore__media" aria-label="Metal restoration image stack">
+          {stackedImages.map((className, index) => (
+            <Reveal
+              className={`whyRestore__card ${className} ${index > 0 ? "whyRestore__card--mobileHidden" : ""}`.trim()}
+              variant="slide-right"
+              delay={index * 120}
+              key={className}
+            >
               <Image
-                className="whyRestore__splitImage whyRestore__splitImage--before"
+                className="whyRestore__stackImage"
                 src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80"
-                alt="Before and after restoration view of a commercial metal structure."
+                alt={index === 0 ? "Commercial metal restoration project." : ""}
                 fill
                 sizes="(max-width: 1023px) 100vw, 48vw"
               />
-              <span className="whyRestore__splitLabel">Before</span>
-            </div>
-            <div className="whyRestore__splitHalf whyRestore__splitHalf--after">
-              <Image
-                className="whyRestore__splitImage"
-                src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80"
-                alt=""
-                fill
-                sizes="(max-width: 1023px) 100vw, 48vw"
-              />
-              <span className="whyRestore__splitLabel">After</span>
-            </div>
-            <div className="whyRestore__splitDivider" aria-hidden="true" />
-          </div>
-        </Reveal>
+            </Reveal>
+          ))}
+        </div>
 
         <div className="whyRestore__content stack-lg">
           <Reveal variant="fade-up">

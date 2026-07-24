@@ -605,14 +605,15 @@ p {
 }
 
 .whyRestore__media {
+  position: relative;
   align-self: center;
+  min-height: 620px;
 }
 
-.whyRestore__splitFrame {
+.whyRestore__card {
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 620px;
+  width: min(100%, 420px);
+  aspect-ratio: 0.82;
   overflow: hidden;
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: var(--radius-xl);
@@ -620,74 +621,43 @@ p {
   box-shadow: var(--shadow-md);
 }
 
-.whyRestore__scaleIn {
-  transform: scale(0.965);
-}
-
-.whyRestore__media.is-visible .whyRestore__scaleIn {
-  transform: scale(1);
-  transition: transform 800ms var(--ease-out-soft);
-}
-
-.whyRestore__splitHalf {
-  position: relative;
-  overflow: hidden;
-}
-
-.whyRestore__splitHalf::after {
+.whyRestore__card::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(7, 16, 31, 0.12), rgba(7, 16, 31, 0.36));
-}
-
-.whyRestore__splitHalf--before::after {
   background:
-    linear-gradient(180deg, rgba(7, 16, 31, 0.24), rgba(7, 16, 31, 0.52)),
-    linear-gradient(135deg, rgba(15, 23, 42, 0.22), transparent 60%);
+    linear-gradient(180deg, rgba(7, 16, 31, 0.16), rgba(7, 16, 31, 0.38)),
+    linear-gradient(135deg, rgba(13, 71, 161, 0.08), transparent 56%);
 }
 
-.whyRestore__splitHalf--after::after {
-  background:
-    linear-gradient(180deg, rgba(13, 71, 161, 0.08), rgba(7, 16, 31, 0.26)),
-    linear-gradient(135deg, rgba(244, 123, 32, 0.16), transparent 58%);
-}
-
-.whyRestore__splitImage {
-  object-fit: cover;
-}
-
-.whyRestore__splitImage--before {
-  filter: saturate(0.45) contrast(0.88) brightness(0.78);
-}
-
-.whyRestore__splitDivider {
+.whyRestore__card--back {
   position: absolute;
-  top: 26px;
-  bottom: 26px;
-  left: 50%;
-  width: 1px;
-  background: rgba(255, 255, 255, 0.72);
-  transform: translateX(-50%);
-  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.08);
-}
-
-.whyRestore__splitLabel {
-  position: absolute;
-  top: 22px;
-  left: 22px;
+  top: 0;
+  left: 0;
   z-index: 1;
-  min-height: 34px;
-  display: inline-flex;
-  align-items: center;
-  border-radius: var(--radius-pill);
-  background: rgba(7, 16, 31, 0.74);
-  color: white;
-  padding: 0 14px;
-  font-size: var(--fs-caption);
-  font-weight: var(--fw-semibold);
-  letter-spacing: 0;
-  text-transform: uppercase;
+  transform: rotate(-5deg);
+  opacity: 0.72;
+}
+
+.whyRestore__card--middle {
+  position: absolute;
+  top: 52px;
+  left: 42px;
+  z-index: 2;
+  transform: rotate(-1.5deg);
+  opacity: 0.88;
+}
+
+.whyRestore__card--front {
+  position: absolute;
+  top: 104px;
+  left: 84px;
+  z-index: 3;
+  transform: rotate(2deg);
+}
+
+.whyRestore__stackImage {
+  object-fit: cover;
 }
 
 .whyRestore__content {
@@ -1025,8 +995,8 @@ p {
     margin: 0;
   }
 
-  .whyRestore__splitFrame {
-    min-height: 520px;
+  .whyRestore__media {
+    min-height: 560px;
   }
 
   .whyRestore__content {
@@ -1129,27 +1099,23 @@ p {
     max-width: none;
   }
 
-  .whyRestore__splitFrame {
-    min-height: 420px;
-    grid-template-columns: 1fr;
+  .whyRestore__media {
+    min-height: auto;
   }
 
-  .whyRestore__splitHalf--before {
-    min-height: 210px;
+  .whyRestore__card {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: 420px;
+    margin-inline: auto;
+    transform: none;
+    opacity: 1;
   }
 
-  .whyRestore__splitHalf--after {
-    min-height: 210px;
-  }
-
-  .whyRestore__splitDivider {
-    top: 50%;
-    bottom: auto;
-    left: 22px;
-    right: 22px;
-    width: auto;
-    height: 1px;
-    transform: translateY(-50%);
+  .whyRestore__card--mobileHidden {
+    display: none;
   }
 
   .whyRestore__benefits {
