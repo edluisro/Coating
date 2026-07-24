@@ -655,7 +655,7 @@ p {
 .whyRestore__heading h2,
 .whyRestore__heading h3,
 .whyRestore__benefitsTitle {
-  max-width: 22ch;
+  max-width: none;
 }
 
 .whyRestore__heading h3 {
