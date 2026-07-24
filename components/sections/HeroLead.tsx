@@ -17,39 +17,46 @@ export function HeroLead() {
     <section className="hero" aria-labelledby="hero-title">
       <div className="container hero__inner">
         <Reveal className="hero__copy" stagger={80}>
-          <p className="hero__eyebrow">Serving Miami-Dade, Broward &amp; Palm Beach County</p>
-          <h1 id="hero-title">Electrostatic Painting Services That Restore Metal Instead of Replacing It.</h1>
-          <h2 className="hero__subheading">
-            Give your metal fences, railings, storefronts, equipment, doors and commercial assets a smooth
-            factory-quality finish while saving thousands in replacement costs.
-          </h2>
-          <p>
-            Florida ElectroStatic specializes in professional on-site electrostatic painting for commercial,
-            industrial and institutional properties throughout South Florida. Our advanced electrostatic application
-            process creates an exceptionally smooth, durable finish with minimal overspray, allowing us to restore
-            existing metal surfaces quickly, efficiently and with minimal disruption to your daily operations.
-          </p>
-          <p>
-            Whether you&apos;re managing an office building, condominium, warehouse, school, hospital, manufacturing
-            facility or retail property, our team helps extend the life of your valuable metal assets while delivering
-            results that look factory finished.
-          </p>
-          <div className="hero__actions">
-            <Button href="#contacto">Request Your Free Estimate</Button>
-            <Button href="tel:+10000000000" variant="secondary">
-              Call Now
-            </Button>
+          <div className="hero__panel">
+            <div className="hero__kicker">
+              <p className="hero__eyebrow">Serving Miami-Dade, Broward &amp; Palm Beach County</p>
+              <span className="hero__badge">Commercial Metal Restoration</span>
+            </div>
+            <h1 id="hero-title">Electrostatic Painting Services That Restore Metal Instead of Replacing It.</h1>
+            <h2 className="hero__subheading">
+              Give your metal fences, railings, storefronts, equipment, doors and commercial assets a smooth
+              factory-quality finish while saving thousands in replacement costs.
+            </h2>
+            <div className="hero__body stack-md">
+              <p>
+                Florida ElectroStatic specializes in professional on-site electrostatic painting for commercial,
+                industrial and institutional properties throughout South Florida. Our advanced electrostatic application
+                process creates an exceptionally smooth, durable finish with minimal overspray, allowing us to restore
+                existing metal surfaces quickly, efficiently and with minimal disruption to your daily operations.
+              </p>
+              <p>
+                Whether you&apos;re managing an office building, condominium, warehouse, school, hospital, manufacturing
+                facility or retail property, our team helps extend the life of your valuable metal assets while delivering
+                results that look factory finished.
+              </p>
+            </div>
+            <div className="hero__actions">
+              <Button href="#contacto">Request Your Free Estimate</Button>
+              <Button href="tel:+10000000000" variant="secondary">
+                Call Now
+              </Button>
+            </div>
+            <Reveal className="trustRow trustRow--hero" stagger={70} aria-label="Service trust signals">
+              {trustSignals.map((signal) => (
+                <div className="trustChip" key={signal}>
+                  <span className="trustChip__icon" aria-hidden="true">
+                    +
+                  </span>
+                  <span>{signal}</span>
+                </div>
+              ))}
+            </Reveal>
           </div>
-          <Reveal className="trustRow trustRow--hero" stagger={70} aria-label="Service trust signals">
-            {trustSignals.map((signal) => (
-              <div className="trustChip" key={signal}>
-                <span className="trustChip__icon" aria-hidden="true">
-                  +
-                </span>
-                <span>{signal}</span>
-              </div>
-            ))}
-          </Reveal>
         </Reveal>
 
         <Reveal className="hero__aside" variant="slide-left" delay={180}>
@@ -63,6 +70,10 @@ export function HeroLead() {
               sizes="(max-width: 1023px) 100vw, 42vw"
             />
             <div className="hero__imageOverlay" aria-hidden="true" />
+            <div className="hero__metric" aria-hidden="true">
+              <strong>South Florida</strong>
+              <span>On-site service for commercial and industrial properties</span>
+            </div>
           </div>
 
           <form className="hero__form" aria-label="Free estimate form">
