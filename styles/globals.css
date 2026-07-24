@@ -327,7 +327,7 @@ p {
   max-width: none;
   margin-bottom: var(--space-24);
   color: rgba(255, 255, 255, 0.94);
-  font-size: 17px;
+  font-size: 15px;
   font-weight: var(--fw-semibold);
   line-height: 1.28;
 }
