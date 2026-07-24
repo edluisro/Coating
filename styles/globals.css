@@ -658,8 +658,14 @@ p {
   max-width: none;
 }
 
+.whyRestore__heading h2 {
+  color: var(--color-accent);
+  font-size: 25px;
+}
+
 .whyRestore__heading h3 {
   color: var(--color-ink-soft);
+  font-size: 18px;
 }
 
 .whyRestore__body p,
