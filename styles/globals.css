@@ -428,7 +428,7 @@ p {
   padding: 28px;
 }
 
-.hero__form h2 {
+.hero__form h3 {
   margin-bottom: var(--space-4);
   color: white;
   font-size: var(--fs-h3);
@@ -901,7 +901,7 @@ p {
   gap: var(--space-32);
 }
 
-.footer h2 {
+.footer h3 {
   color: white;
   font-size: var(--fs-h4);
 }

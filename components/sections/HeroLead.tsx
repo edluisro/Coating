@@ -21,10 +21,10 @@ export function HeroLead() {
               <span className="hero__badge">SERVING MIAMI-DADE, BROWARD &amp; PALM BEACH COUNTY</span>
             </div>
             <h1 id="hero-title">Electrostatic Painting Services That Restore Metal Instead of Replacing It.</h1>
-            <h2 className="hero__subheading">
+            <p className="hero__subheading">
               Give your metal fences, railings, storefronts, equipment, doors and commercial assets a smooth
               factory-quality finish while saving thousands in replacement costs.
-            </h2>
+            </p>
             <div className="hero__body stack-md">
               <p>
                 Florida ElectroStatic specializes in professional on-site electrostatic painting for commercial,
@@ -59,7 +59,7 @@ export function HeroLead() {
 
         <Reveal className="hero__aside" variant="slide-left" delay={180}>
           <form className="hero__form" aria-label="Free estimate form">
-            <h2 className="hero__formTitle">Get a factory-like finish without replacement costs.</h2>
+            <h3 className="hero__formTitle">Get a factory-like finish without replacement costs.</h3>
             <Input id="lead-full-name" label="Full Name" name="fullName" autoComplete="name" required />
             <Input id="lead-company" label="Company" name="company" autoComplete="organization" />
             <Input id="lead-phone-number" label="Phone Number" name="phoneNumber" autoComplete="tel" required />
