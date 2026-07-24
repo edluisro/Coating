@@ -104,7 +104,6 @@ export function Header() {
                 priority
               />
             </span>
-            <span className="brandText">Florida ElectroStatic</span>
           </a>
 
           <div className="navGroup navGroup--right" aria-label="Secciones principales derecha">

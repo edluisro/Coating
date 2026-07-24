@@ -199,7 +199,6 @@ p {
 }
 
 .siteHeader.is-sticky .navPill,
-.siteHeader.is-sticky .brandText,
 .siteHeader.is-sticky .menuToggle {
   color: #13233f;
 }
@@ -235,20 +234,12 @@ p {
 
 .brand--orb {
   position: relative;
-  display: grid;
-  justify-items: center;
-  gap: 4px;
-  min-width: 148px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 96px;
   margin-block: -10px;
   z-index: 1;
-}
-
-.brandText {
-  font-size: 0.78rem;
-  font-weight: var(--fw-semibold);
-  color: currentColor;
-  opacity: 0.92;
 }
 
 .brandOrb {
@@ -1207,7 +1198,7 @@ p {
 
   .navGroup,
   .navCta,
-  .brandText {
+  .brand--orb {
     display: none;
   }
 
@@ -1218,11 +1209,6 @@ p {
 
   .menuToggle {
     display: grid;
-  }
-
-  .brand--orb {
-    justify-items: start;
-    min-width: 0;
   }
 
   .brandOrb {
