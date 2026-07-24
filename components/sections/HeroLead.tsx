@@ -19,7 +19,7 @@ export function HeroLead() {
         <Reveal className="hero__copy" stagger={80}>
           <div className="hero__panel">
             <div className="hero__kicker">
-              <p className="hero__eyebrow">Serving Miami-Dade, Broward &amp; Palm Beach County</p>
+              <p className="hero__eyebrow">SERVING MIAMI-DADE, BROWARD &amp; PALM BEACH COUNTY</p>
               <span className="hero__badge">Commercial Metal Restoration</span>
             </div>
             <h1 id="hero-title">Electrostatic Painting Services That Restore Metal Instead of Replacing It.</h1>
