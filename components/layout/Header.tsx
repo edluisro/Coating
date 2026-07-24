@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useId, useState } from "react";
 import { Button } from "@/components/ui/Button";
 
@@ -94,9 +95,14 @@ export function Header() {
 
           <a className="brand brand--orb" href="#" aria-label="Fast Answer Agency inicio" onClick={closeMenu}>
             <span className="brandOrb" aria-hidden="true">
-              <span className="brandOrb__core" />
-              <span className="brandOrb__dot brandOrb__dot--top" />
-              <span className="brandOrb__dot brandOrb__dot--right" />
+              <Image
+                src="https://res.cloudinary.com/wqsitnyu/image/upload/v1784936802/Logo_m2syj2.png"
+                alt="Florida ElectroStatic logo"
+                fill
+                sizes="70px"
+                className="brandOrb__image"
+                priority
+              />
             </span>
             <span className="brandText">Florida ElectroStatic</span>
           </a>

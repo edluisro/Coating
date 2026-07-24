@@ -258,39 +258,18 @@ p {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background:
-    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2), transparent 22%),
-    linear-gradient(180deg, #2f66f0, #1f4fca);
+  background: rgba(255, 255, 255, 0.04);
   box-shadow:
     0 14px 30px rgba(34, 95, 235, 0.28),
     0 0 0 8px rgba(255, 255, 255, 0.04),
     inset 0 -10px 20px rgba(5, 14, 40, 0.18);
 }
 
-.brandOrb__core {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: white;
-  box-shadow: 18px -12px 0 0 rgba(255, 255, 255, 0.34);
-}
-
-.brandOrb__dot {
+.brandOrb__image {
   position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 4px;
-  background: white;
-}
-
-.brandOrb__dot--top {
-  top: 18px;
-  left: 20px;
-}
-
-.brandOrb__dot--right {
-  right: 16px;
-  bottom: 17px;
+  inset: 0;
+  object-fit: contain;
+  padding: 6px;
 }
 
 .navPill {
@@ -1255,25 +1234,8 @@ p {
       inset 0 -10px 20px rgba(5, 14, 40, 0.16);
   }
 
-  .brandOrb__core {
-    width: 22px;
-    height: 22px;
-    box-shadow: 16px -10px 0 0 rgba(255, 255, 255, 0.34);
-  }
-
-  .brandOrb__dot {
-    width: 9px;
-    height: 9px;
-  }
-
-  .brandOrb__dot--top {
-    top: 17px;
-    left: 18px;
-  }
-
-  .brandOrb__dot--right {
-    right: 14px;
-    bottom: 15px;
+  .brandOrb__image {
+    padding: 5px;
   }
 
   .mobileDrawer {
