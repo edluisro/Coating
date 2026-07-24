@@ -12,11 +12,7 @@ const benefits = [
   "Improve the appearance and value of your commercial property.",
 ];
 
-const stackedImages = [
-  "whyRestore__card--back",
-  "whyRestore__card--middle",
-  "whyRestore__card--front",
-];
+const stackedImages = ["whyRestore__card--1", "whyRestore__card--2", "whyRestore__card--3"];
 
 export function WhyRestoreSection() {
   return (
