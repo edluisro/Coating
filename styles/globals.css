@@ -149,9 +149,9 @@ p {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: var(--space-24);
-  min-height: 90px;
+  min-height: 70px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 999px;
+  border-radius: 25px;
   background:
     radial-gradient(circle at top center, rgba(255, 255, 255, 0.07), transparent 34%),
     rgba(14, 18, 28, 0.92);
@@ -159,7 +159,7 @@ p {
     0 16px 42px rgba(4, 8, 18, 0.28),
     inset 0 1px 0 rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(18px);
-  padding: 0 22px;
+  padding: 6px;
 }
 
 .siteHeader.is-sticky .mainNav {
@@ -175,7 +175,7 @@ p {
 .navGroup {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 6px;
 }
 
 .navGroup--left {
@@ -201,9 +201,11 @@ p {
   position: relative;
   display: grid;
   justify-items: center;
-  gap: 10px;
+  gap: 4px;
   min-width: 148px;
   text-align: center;
+  margin-block: -10px;
+  z-index: 1;
 }
 
 .brandText {
@@ -256,16 +258,20 @@ p {
 }
 
 .navPill {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 52px;
-  border-radius: var(--radius-pill);
-  padding: 0 18px;
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 4px;
+  min-width: 108px;
+  min-height: 58px;
+  border-radius: 18px;
+  padding: 8px 14px;
   color: currentColor;
-  font-size: 0.96rem;
+  font-size: 0.88rem;
   font-weight: var(--fw-semibold);
-  transition: background-color 0.22s ease, color 0.22s ease, transform 0.22s ease;
+  text-align: center;
+  transition: background-color 0.28s var(--ease-standard), color 0.28s var(--ease-standard), transform 0.28s var(--ease-standard);
 }
 
 .navPill:hover {
@@ -287,14 +293,37 @@ p {
 .navPill__icon {
   display: grid;
   place-items: center;
-  width: 22px;
-  height: 22px;
+  width: 25px;
+  height: 25px;
   color: var(--color-accent);
+  transform: translateY(0) scale(1);
+  transition: transform 0.32s var(--ease-standard), color 0.28s var(--ease-standard);
 }
 
 .navPill__icon svg {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
+  transition: width 0.32s var(--ease-standard), height 0.32s var(--ease-standard);
+}
+
+.navPill > span:last-child {
+  transition: transform 0.32s var(--ease-standard), opacity 0.28s var(--ease-standard);
+}
+
+.navPill:hover .navPill__icon,
+.navPill:focus-visible .navPill__icon {
+  transform: translateY(14px) scale(1.08);
+}
+
+.navPill:hover .navPill__icon svg,
+.navPill:focus-visible .navPill__icon svg {
+  width: 27px;
+  height: 27px;
+}
+
+.navPill:hover > span:last-child,
+.navPill:focus-visible > span:last-child {
+  transform: translateY(-18px);
 }
 
 .navCta {
@@ -303,7 +332,7 @@ p {
 }
 
 .navCta .btn {
-  min-height: 54px;
+  min-height: 52px;
   padding-inline: 26px;
   box-shadow: 0 16px 34px rgba(244, 123, 32, 0.22);
 }
