@@ -307,7 +307,7 @@ p {
 }
 
 .navPill > span:last-child {
-  transition: transform 0.32s var(--ease-standard);
+  transition: transform 0.32s var(--ease-standard), opacity 0.22s var(--ease-standard);
 }
 
 .navPill:hover .navPill__icon,
@@ -317,13 +317,14 @@ p {
 
 .navPill:hover .navPill__icon svg,
 .navPill:focus-visible .navPill__icon svg {
-  width: 27px;
-  height: 27px;
+  width: 30px;
+  height: 30px;
 }
 
 .navPill:hover > span:last-child,
 .navPill:focus-visible > span:last-child {
   transform: translateY(-8px);
+  opacity: 0;
 }
 
 .navCta {
