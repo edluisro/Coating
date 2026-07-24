@@ -706,6 +706,11 @@ p {
   font-weight: var(--fw-bold);
 }
 
+.whyRestore__benefitIcon svg {
+  width: 16px;
+  height: 16px;
+}
+
 .whyRestore__benefitItem p {
   margin: 0;
   color: var(--color-ink-soft);

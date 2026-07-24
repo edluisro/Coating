@@ -4,12 +4,65 @@ import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/ui/Reveal";
 
 const benefits = [
-  "Restore existing metal for a fraction of the replacement cost.",
-  "Keep your business operating with minimal interruption.",
-  "Protect metal against corrosion, moisture and daily wear.",
-  "Achieve a smooth factory-quality finish with minimal overspray.",
-  "Increase the lifespan of fences, railings, doors, storefronts and equipment.",
-  "Improve the appearance and value of your commercial property.",
+  {
+    text: "Restore existing metal for a fraction of the replacement cost.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="8" />
+        <path d="M9 10h6" />
+        <path d="M8.5 14c.9 1 2.1 1.5 3.5 1.5 1.8 0 3-1 3-2.2 0-3.1-6-1.4-6-4.3 0-1.2 1.1-2.2 2.9-2.2 1.2 0 2.3.4 3.1 1.2" />
+      </svg>
+    ),
+  },
+  {
+    text: "Keep your business operating with minimal interruption.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4 18h16" />
+        <path d="M6 18V9l6-4 6 4v9" />
+        <path d="M10 14h4" />
+      </svg>
+    ),
+  },
+  {
+    text: "Protect metal against corrosion, moisture and daily wear.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 4l6 3v5c0 4.2-2.6 6.8-6 8-3.4-1.2-6-3.8-6-8V7l6-3Z" />
+        <path d="M9.5 12.5 11 14l3.5-4" />
+      </svg>
+    ),
+  },
+  {
+    text: "Achieve a smooth factory-quality finish with minimal overspray.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4 13h6" />
+        <path d="M10 10v6" />
+        <path d="M14 10c1.8 0 3 1.2 3 3s-1.2 3-3 3" />
+        <path d="M17 11.5 20 10" />
+        <path d="M17.3 13 21 13" />
+        <path d="M17 14.5 20 16" />
+      </svg>
+    ),
+  },
+  {
+    text: "Increase the lifespan of fences, railings, doors, storefronts and equipment.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 6v6l4 2" />
+        <circle cx="12" cy="12" r="8" />
+      </svg>
+    ),
+  },
+  {
+    text: "Improve the appearance and value of your commercial property.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 17.5 6.7 20l1-5.7-4.2-4.1 5.8-.8L12 4l2.7 5.4 5.8.8-4.2 4.1 1 5.7Z" />
+      </svg>
+    ),
+  },
 ];
 
 const stackedImages = ["whyRestore__card--1", "whyRestore__card--2", "whyRestore__card--3"];
@@ -69,11 +122,11 @@ export function WhyRestoreSection() {
                 <h3 className="whyRestore__benefitsTitle">Why Businesses Choose Restoration Instead of Replacement</h3>
                 <Reveal className="whyRestore__benefits" stagger={70} aria-label="Benefits of restoration">
                   {benefits.map((benefit) => (
-                    <div className="whyRestore__benefitItem" key={benefit}>
+                    <div className="whyRestore__benefitItem" key={benefit.text}>
                       <span className="whyRestore__benefitIcon" aria-hidden="true">
-                        +
+                        {benefit.icon}
                       </span>
-                      <p>{benefit}</p>
+                      <p>{benefit.text}</p>
                     </div>
                   ))}
                 </Reveal>
