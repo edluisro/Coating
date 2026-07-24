@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Input, Textarea } from "@/components/ui/Input";
 import { Reveal } from "@/components/ui/Reveal";
@@ -59,22 +58,6 @@ export function HeroLead() {
         </Reveal>
 
         <Reveal className="hero__aside" variant="slide-left" delay={180}>
-          <div className="hero__imageWrap">
-            <Image
-              className="hero__image"
-              src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80"
-              alt="Industrial technician coating a commercial metal structure on-site."
-              fill
-              priority
-              sizes="(max-width: 1023px) 100vw, 42vw"
-            />
-            <div className="hero__imageOverlay" aria-hidden="true" />
-            <div className="hero__metric" aria-hidden="true">
-              <strong>South Florida</strong>
-              <span>On-site service for commercial and industrial properties</span>
-            </div>
-          </div>
-
           <form className="hero__form" aria-label="Free estimate form">
             <h2 className="hero__formTitle">Get a factory-like finish without replacement costs.</h2>
             <Input id="lead-full-name" label="Full Name" name="fullName" autoComplete="name" required />

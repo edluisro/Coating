@@ -410,63 +410,11 @@ p {
 }
 
 .hero__aside {
-  display: grid;
-  gap: 0;
+  display: block;
   position: relative;
   align-self: center;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: calc(var(--radius-xl) + 6px);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02)),
-    rgba(8, 16, 31, 0.48);
-  box-shadow: 0 34px 90px rgba(2, 6, 16, 0.34);
-  overflow: hidden;
-}
-
-.hero__imageWrap {
-  position: relative;
-  min-height: 356px;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: calc(var(--radius-xl) + 6px) calc(var(--radius-xl) + 6px) 0 0;
-  background:
-    linear-gradient(135deg, rgba(13, 71, 161, 0.18), transparent 60%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01)),
-    #101a2c;
-}
-
-.hero__image {
-  object-fit: cover;
-}
-
-.hero__imageOverlay {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(7, 16, 31, 0.08), rgba(7, 16, 31, 0.62)),
-    linear-gradient(135deg, rgba(13, 71, 161, 0.16), transparent 52%);
-}
-
-.hero__metric {
-  position: absolute;
-  left: 24px;
-  right: 24px;
-  bottom: 24px;
-  display: grid;
-  gap: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-lg);
-  background: rgba(7, 16, 31, 0.8);
-  box-shadow: 0 22px 48px rgba(3, 8, 18, 0.22);
-  backdrop-filter: blur(12px);
-  padding: 16px 18px;
-  color: rgba(255, 255, 255, 0.88);
-}
-
-.hero__metric strong {
-  font-family: var(--font-heading);
-  font-size: 1.05rem;
-  font-weight: var(--fw-bold);
+  max-width: 460px;
+  justify-self: end;
 }
 
 .hero__form,
@@ -497,8 +445,8 @@ p {
   position: relative;
   z-index: 1;
   margin: 0;
-  border: 0;
-  border-radius: 0 0 calc(var(--radius-xl) + 6px) calc(var(--radius-xl) + 6px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: calc(var(--radius-xl) + 6px);
   background:
     linear-gradient(180deg, rgba(13, 71, 161, 0.94), rgba(8, 46, 105, 0.98)),
     linear-gradient(180deg, var(--color-primary), var(--color-primary-800));
@@ -962,12 +910,8 @@ p {
     grid-template-columns: 1fr;
   }
 
-  .hero__imageWrap {
-    min-height: 280px;
-  }
-
   .hero__form {
-    border-radius: 0 0 calc(var(--radius-xl) + 6px) calc(var(--radius-xl) + 6px);
+    border-radius: calc(var(--radius-xl) + 6px);
   }
 
   .hero__actions .btn {
