@@ -1,45 +1,84 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
-import { Input, Select } from "@/components/ui/Input";
+import { Input, Textarea } from "@/components/ui/Input";
 import { Reveal } from "@/components/ui/Reveal";
+
+const trustSignals = [
+  "On-Site Service",
+  "Commercial & Industrial Specialists",
+  "Minimal Business Disruption",
+  "Factory-Like Finish",
+  "Licensed & Insured",
+  "Serving All South Florida",
+];
 
 export function HeroLead() {
   return (
     <section className="hero" aria-labelledby="hero-title">
       <div className="container hero__inner">
         <Reveal className="hero__copy" stagger={80}>
-          <p className="hero__eyebrow">Servicio premium local</p>
-          <h1 id="hero-title">Convierte visitas en clientes con una landing clara.</h1>
+          <p className="hero__eyebrow">Serving Miami-Dade, Broward &amp; Palm Beach County</p>
+          <h1 id="hero-title">Electrostatic Painting Services That Restore Metal Instead of Replacing It.</h1>
+          <h2 className="hero__subheading">
+            Give your metal fences, railings, storefronts, equipment, doors and commercial assets a smooth
+            factory-quality finish while saving thousands in replacement costs.
+          </h2>
           <p>
-            Creamos una presencia digital rapida, confiable y preparada para captar solicitudes desde el primer scroll.
+            Florida ElectroStatic specializes in professional on-site electrostatic painting for commercial,
+            industrial and institutional properties throughout South Florida. Our advanced electrostatic application
+            process creates an exceptionally smooth, durable finish with minimal overspray, allowing us to restore
+            existing metal surfaces quickly, efficiently and with minimal disruption to your daily operations.
+          </p>
+          <p>
+            Whether you&apos;re managing an office building, condominium, warehouse, school, hospital, manufacturing
+            facility or retail property, our team helps extend the life of your valuable metal assets while delivering
+            results that look factory finished.
           </p>
           <div className="hero__actions">
-            <Button href="#contacto">Solicitar propuesta</Button>
+            <Button href="#contacto">Request Your Free Estimate</Button>
             <Button href="tel:+10000000000" variant="secondary">
-              Llamar ahora
+              Call Now
             </Button>
           </div>
-          <ul className="trustRow" aria-label="Indicadores de confianza">
-            <li>4.9 rating</li>
-            <li>Respuesta el mismo dia</li>
-            <li>Soporte directo</li>
-          </ul>
+          <Reveal className="trustRow trustRow--hero" stagger={70} aria-label="Service trust signals">
+            {trustSignals.map((signal) => (
+              <div className="trustChip" key={signal}>
+                <span className="trustChip__icon" aria-hidden="true">
+                  +
+                </span>
+                <span>{signal}</span>
+              </div>
+            ))}
+          </Reveal>
         </Reveal>
 
-        <Reveal variant="slide-left" delay={180}>
-          <form className="hero__form" aria-label="Formulario rapido de contacto">
-            <h2>Recibe una cotizacion</h2>
-            <Input id="lead-name" label="Nombre" name="name" autoComplete="name" required />
-            <Input id="lead-phone" label="Telefono" name="phone" autoComplete="tel" required />
-            <Select id="lead-service" label="Necesidad" name="service" defaultValue="">
-              <option value="" disabled>
-                Selecciona una opcion
-              </option>
-              <option>Landing page</option>
-              <option>Automatizacion</option>
-              <option>Optimizar web actual</option>
-            </Select>
-            <button className="btn btn-primary" type="submit">
-              Enviar solicitud
+        <Reveal className="hero__aside" variant="slide-left" delay={180}>
+          <div className="hero__imageWrap">
+            <Image
+              className="hero__image"
+              src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80"
+              alt="Industrial technician coating a commercial metal structure on-site."
+              fill
+              priority
+              sizes="(max-width: 1023px) 100vw, 42vw"
+            />
+            <div className="hero__imageOverlay" aria-hidden="true" />
+          </div>
+
+          <form className="hero__form" aria-label="Free estimate form">
+            <h2 className="hero__formTitle">Get a factory-like finish without replacement costs.</h2>
+            <Input id="lead-full-name" label="Full Name" name="fullName" autoComplete="name" required />
+            <Input id="lead-company" label="Company" name="company" autoComplete="organization" />
+            <Input id="lead-phone-number" label="Phone Number" name="phoneNumber" autoComplete="tel" required />
+            <Input id="lead-email-address" label="Email Address" name="emailAddress" type="email" autoComplete="email" required />
+            <Textarea
+              id="lead-project-details"
+              label="Tell us about your project..."
+              name="projectDetails"
+              required
+            />
+            <button className="btn btn-primary hero__formButton" type="submit">
+              Get My Free Estimate
             </button>
           </form>
         </Reveal>
