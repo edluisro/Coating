@@ -50,7 +50,7 @@ h3 {
 h1 {
   max-width: 12ch;
   margin-bottom: var(--space-20);
-  font-size: var(--fs-hero);
+  font-size: 45px;
   font-weight: var(--fw-extrabold);
   line-height: 1.05;
 }
@@ -331,7 +331,7 @@ p {
   max-width: 22ch;
   margin-bottom: var(--space-24);
   color: rgba(255, 255, 255, 0.94);
-  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  font-size: 17px;
   font-weight: var(--fw-semibold);
   line-height: 1.28;
 }
@@ -943,7 +943,7 @@ p {
 
   h1 {
     max-width: 10ch;
-    font-size: clamp(2.65rem, 12vw, 4.1rem);
+    font-size: 45px;
   }
 
   .hero__subheading {
