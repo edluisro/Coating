@@ -283,7 +283,6 @@ p {
   padding-block: 132px 72px;
 }
 
-.hero__eyebrow,
 .eyebrow {
   margin-bottom: var(--space-16);
   color: var(--color-accent);
@@ -291,10 +290,6 @@ p {
   font-weight: var(--fw-bold);
   letter-spacing: 0;
   text-transform: uppercase;
-}
-
-.hero__eyebrow {
-  color: rgba(255, 255, 255, 0.84);
 }
 
 .hero__copy p {
