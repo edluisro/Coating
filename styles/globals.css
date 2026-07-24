@@ -411,18 +411,28 @@ p {
 
 .hero__aside {
   display: grid;
-  gap: var(--space-24);
+  gap: 0;
   position: relative;
-  padding-top: 20px;
+  align-self: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: calc(var(--radius-xl) + 6px);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02)),
+    rgba(8, 16, 31, 0.48);
+  box-shadow: 0 34px 90px rgba(2, 6, 16, 0.34);
+  overflow: hidden;
 }
 
 .hero__imageWrap {
   position: relative;
-  min-height: 420px;
+  min-height: 356px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-lg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: calc(var(--radius-xl) + 6px) calc(var(--radius-xl) + 6px) 0 0;
+  background:
+    linear-gradient(135deg, rgba(13, 71, 161, 0.18), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01)),
+    #101a2c;
 }
 
 .hero__image {
@@ -433,8 +443,8 @@ p {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(7, 16, 31, 0.04), rgba(7, 16, 31, 0.42)),
-    linear-gradient(135deg, rgba(13, 71, 161, 0.18), transparent 58%);
+    linear-gradient(180deg, rgba(7, 16, 31, 0.08), rgba(7, 16, 31, 0.62)),
+    linear-gradient(135deg, rgba(13, 71, 161, 0.16), transparent 52%);
 }
 
 .hero__metric {
@@ -446,8 +456,9 @@ p {
   gap: 4px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-lg);
-  background: rgba(7, 16, 31, 0.72);
-  backdrop-filter: blur(10px);
+  background: rgba(7, 16, 31, 0.8);
+  box-shadow: 0 22px 48px rgba(3, 8, 18, 0.22);
+  backdrop-filter: blur(12px);
   padding: 16px 18px;
   color: rgba(255, 255, 255, 0.88);
 }
@@ -485,11 +496,13 @@ p {
 .hero__form {
   position: relative;
   z-index: 1;
-  margin-inline: 28px 0;
-  margin-top: -120px;
+  margin: 0;
+  border: 0;
+  border-radius: 0 0 calc(var(--radius-xl) + 6px) calc(var(--radius-xl) + 6px);
   background:
-    linear-gradient(180deg, rgba(13, 71, 161, 0.98), rgba(8, 46, 105, 0.98)),
+    linear-gradient(180deg, rgba(13, 71, 161, 0.94), rgba(8, 46, 105, 0.98)),
     linear-gradient(180deg, var(--color-primary), var(--color-primary-800));
+  padding: 24px 24px 28px;
 }
 
 .hero__formButton {
@@ -852,8 +865,7 @@ p {
   }
 
   .hero__form {
-    margin-inline: 0;
-    margin-top: -88px;
+    margin: 0;
   }
 
   .services__grid {
@@ -955,7 +967,7 @@ p {
   }
 
   .hero__form {
-    margin-top: 0;
+    border-radius: 0 0 calc(var(--radius-xl) + 6px) calc(var(--radius-xl) + 6px);
   }
 
   .hero__actions .btn {

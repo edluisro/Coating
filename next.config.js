@@ -4,6 +4,7 @@ const nextConfig = {
   basePath: "/landing-next",
   distDir: ".next-build",
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
