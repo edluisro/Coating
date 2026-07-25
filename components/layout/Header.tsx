@@ -43,6 +43,9 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuId = useId();
+  const logoSrc = isScrolled
+    ? "https://res.cloudinary.com/wqsitnyu/image/upload/v1784937543/logo_en_negro_epa0ol.png"
+    : "https://res.cloudinary.com/wqsitnyu/image/upload/v1784936802/Logo_m2syj2.png";
 
   useEffect(() => {
     const updateHeaderState = () => setIsScrolled(window.scrollY > 16);
@@ -96,7 +99,7 @@ export function Header() {
           <a className="brand brand--orb" href="#" aria-label="Fast Answer Agency inicio" onClick={closeMenu}>
             <span className="brandOrb" aria-hidden="true">
               <Image
-                src="https://res.cloudinary.com/wqsitnyu/image/upload/v1784936802/Logo_m2syj2.png"
+                src={logoSrc}
                 alt="Florida ElectroStatic logo"
                 fill
                 sizes="70px"
