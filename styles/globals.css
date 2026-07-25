@@ -249,11 +249,8 @@ p {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.04);
-  box-shadow:
-    0 14px 30px rgba(34, 95, 235, 0.28),
-    0 0 0 8px rgba(255, 255, 255, 0.04),
-    inset 0 -10px 20px rgba(5, 14, 40, 0.18);
+  background: transparent;
+  box-shadow: none;
 }
 
 .brandOrb__image {
@@ -1214,10 +1211,6 @@ p {
   .brandOrb {
     width: 62px;
     height: 62px;
-    box-shadow:
-      0 10px 24px rgba(34, 95, 235, 0.24),
-      0 0 0 6px rgba(255, 255, 255, 0.04),
-      inset 0 -10px 20px rgba(5, 14, 40, 0.16);
   }
 
   .brandOrb__image {
