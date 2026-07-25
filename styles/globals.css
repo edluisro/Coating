@@ -145,7 +145,7 @@ p {
 }
 
 .mainNav {
-  --brand-clearance: 152px;
+  --brand-clearance: 180px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) var(--brand-clearance) minmax(0, 1fr);
   align-items: center;
@@ -217,12 +217,14 @@ p {
 .navGroup--left {
   grid-column: 1;
   justify-content: flex-start;
+  padding-right: 12px;
 }
 
 .navGroup--right {
   grid-column: 3;
   justify-content: flex-end;
   min-width: 0;
+  padding-left: 12px;
 }
 
 .brand,
