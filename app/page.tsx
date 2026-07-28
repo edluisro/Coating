@@ -4,6 +4,7 @@ import { BookingCta } from "@/components/sections/BookingCta";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { HeroLead } from "@/components/sections/HeroLead";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
+import { ServiceAreas } from "@/components/sections/ServiceAreas";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { WhyRestoreSection } from "@/components/sections/WhyRestoreSection";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
@@ -20,6 +21,7 @@ export default function Home() {
         <WhyChooseUs />
         <BookingCta />
         <FinalCta />
+        <ServiceAreas />
       </main>
       <Footer />
     </>
