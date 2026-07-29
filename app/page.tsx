@@ -6,6 +6,7 @@ import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
 import { ProjectGallery } from "@/components/sections/ProjectGallery";
 import { ServiceAreas } from "@/components/sections/ServiceAreas";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { WhatIsElectrostatic } from "@/components/sections/WhatIsElectrostatic";
 import { WhyRestoreSection } from "@/components/sections/WhyRestoreSection";
 
@@ -22,6 +23,7 @@ export default function Home() {
         <ServiceAreas />
         <ServicesGrid />
         <ProcessTimeline />
+        <TestimonialsSection />
       </main>
       <Footer />
     </>

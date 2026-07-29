@@ -59,6 +59,51 @@ const behaviorScript = String.raw`<script>
     document.querySelectorAll(revealSelector).forEach((element) => observer.observe(element));
   }
 
+  const countTargets = document.querySelectorAll("[data-count-to]");
+  const animateCount = (element) => {
+    if (element.getAttribute("data-count-complete") === "true") {
+      return;
+    }
+
+    const target = Number(element.getAttribute("data-count-to") || "0");
+    const suffix = element.getAttribute("data-count-suffix") || "";
+    const duration = 1100;
+    const start = performance.now();
+
+    element.setAttribute("data-count-complete", "true");
+
+    const tick = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      element.textContent = Math.round(target * eased).toString() + suffix;
+
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      }
+    };
+
+    requestAnimationFrame(tick);
+  };
+
+  if (reducedMotion || !("IntersectionObserver" in window)) {
+    countTargets.forEach((element) => animateCount(element));
+  } else {
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        animateCount(entry.target);
+        countObserver.unobserve(entry.target);
+      });
+    }, {
+      threshold: 0.35,
+    });
+
+    countTargets.forEach((element) => countObserver.observe(element));
+  }
+
   const header = document.querySelector(".siteHeader");
   const menuToggle = document.querySelector(".menuToggle");
   const mobileDrawer = document.querySelector(".mobileDrawer");
