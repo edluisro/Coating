@@ -1,14 +1,12 @@
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
-import { BookingCta } from "@/components/sections/BookingCta";
-import { FinalCta } from "@/components/sections/FinalCta";
+import { ApplicationsGrid } from "@/components/sections/ApplicationsGrid";
 import { HeroLead } from "@/components/sections/HeroLead";
-import { ProcessSteps } from "@/components/sections/ProcessSteps";
-import { ProjectGallery } from "@/components/sections/ProjectGallery";
+import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
 import { ServiceAreas } from "@/components/sections/ServiceAreas";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
+import { WhatIsElectrostatic } from "@/components/sections/WhatIsElectrostatic";
 import { WhyRestoreSection } from "@/components/sections/WhyRestoreSection";
-import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 
 export default function Home() {
   return (
@@ -17,13 +15,11 @@ export default function Home() {
       <main id="main-content">
         <HeroLead />
         <WhyRestoreSection />
-        <ServicesGrid />
-        <ProjectGallery />
-        <ProcessSteps />
-        <WhyChooseUs />
-        <BookingCta />
-        <FinalCta />
+        <WhatIsElectrostatic />
+        <ApplicationsGrid />
         <ServiceAreas />
+        <ServicesGrid />
+        <ProcessTimeline />
       </main>
       <Footer />
     </>

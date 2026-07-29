@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
+import { PageLoader } from "@/components/ui/PageLoader";
 import { Poppins } from "next/font/google";
 import "@/styles/tokens.css";
 import "@/styles/globals.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-heading",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
   display: "swap",
 });
 
 const siteUrl = "https://tempserver.fastansweragency.com/landing-next";
-const siteTitle = "Fast Answer Agency";
+const siteTitle = "Florida ElectroStatic";
 const siteDescription =
-  "Landing premium para negocios de servicios que necesitan captar clientes con rapidez, confianza y claridad.";
+  "Professional on-site electrostatic painting services for commercial and industrial metal restoration across South Florida.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -48,7 +49,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={poppins.variable}>
-      <body>{children}</body>
+      <body className={poppins.className}>
+        <PageLoader />
+        {children}
+      </body>
     </html>
   );
 }

@@ -14,6 +14,21 @@ const trustSignals = [
 export function HeroLead() {
   return (
     <section className="hero" aria-labelledby="hero-title">
+      <div className="hero__media" aria-hidden="true">
+        <video
+          className="hero__video"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+        >
+          <source
+            src="https://res.cloudinary.com/wqsitnyu/video/upload/v1784926827/4771124_Painter_Spraying_1280x720_h4yfkj.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
       <div className="container hero__inner">
         <Reveal className="hero__copy" stagger={80}>
           <div className="hero__panel">

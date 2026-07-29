@@ -65,24 +65,40 @@ const benefits = [
   },
 ];
 
-const stackedImages = ["whyRestore__card--1", "whyRestore__card--2", "whyRestore__card--3"];
+const stackedImages = [
+  {
+    className: "whyRestore__card--1",
+    src: "https://res.cloudinary.com/wqsitnyu/image/upload/v1784941499/2149878749_sshdkh.jpg",
+    alt: "Professional consultation and project planning for metal restoration.",
+  },
+  {
+    className: "whyRestore__card--2",
+    src: "https://res.cloudinary.com/wqsitnyu/image/upload/v1784941445/2149878754_yywmzy.jpg",
+    alt: "Industrial refinishing work on commercial metal surfaces.",
+  },
+  {
+    className: "whyRestore__card--3",
+    src: "https://res.cloudinary.com/wqsitnyu/image/upload/v1784941421/closeup-shot-worker-protective-gloves-painting-wooden-details_jsra0d.jpg",
+    alt: "Detailed professional coating application by hand.",
+  },
+];
 
 export function WhyRestoreSection() {
   return (
-    <section className="whyRestore section section--alt" aria-labelledby="why-restore-title">
+    <section className="whyRestore section section--alt" id="why-restore" aria-labelledby="why-restore-title">
       <div className="container whyRestore__grid">
         <div className="whyRestore__media" aria-label="Metal restoration image stack">
-          {stackedImages.map((className, index) => (
+          {stackedImages.map((image, index) => (
             <Reveal
-              className={`whyRestore__card ${className} ${index > 0 ? "whyRestore__card--mobileHidden" : ""}`.trim()}
+              className={`whyRestore__card ${image.className} ${index > 0 ? "whyRestore__card--mobileHidden" : ""}`.trim()}
               variant="slide-right"
               delay={index * 120}
-              key={className}
+              key={image.className}
             >
               <Image
                 className="whyRestore__stackImage"
-                src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80"
-                alt={index === 0 ? "Commercial metal restoration project." : ""}
+                src={image.src}
+                alt={image.alt}
                 fill
                 sizes="(max-width: 1023px) 100vw, 48vw"
               />
@@ -98,7 +114,7 @@ export function WhyRestoreSection() {
               <div className="whyRestore__body stack-md">
                 <p>
                   Replacing metal fences, railings, storefronts, doors, window frames, structural steel or commercial
-                  equipment is often unnecessary—and expensive. In many cases, the existing metal is still structurally
+                  equipment is often unnecessary and expensive. In many cases, the existing metal is still structurally
                   sound. The real problem is simply a deteriorated finish caused by years of exposure to Florida&apos;s
                   sun, humidity and coastal environment.
                 </p>

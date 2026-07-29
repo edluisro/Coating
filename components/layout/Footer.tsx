@@ -3,29 +3,34 @@ export function Footer() {
     <footer className="footer">
       <div className="container footer__grid">
         <div>
-          <a className="footer__brand" href="#">Fast Answer</a>
-          <p>Landing base para una empresa de servicios moderna, confiable y orientada a conversion.</p>
+          <a className="footer__brand" href="#">
+            Florida ElectroStatic
+          </a>
+          <p>
+            On-site electrostatic painting for fences, railings, storefronts, doors, equipment and commercial metal
+            surfaces across South Florida.
+          </p>
         </div>
         <div>
-          <h3>Servicios</h3>
-          <a href="#servicios">Diseno web</a>
-          <a href="#servicios">Automatizacion</a>
-          <a href="#servicios">Optimizacion</a>
+          <h3>Services</h3>
+          <a href="#servicios">Fences and railings</a>
+          <a href="#servicios">Doors and frames</a>
+          <a href="#servicios">Storefront restoration</a>
         </div>
         <div>
-          <h3>Empresa</h3>
-          <a href="#proceso">Proceso</a>
-          <a href="#contacto">Contacto</a>
-          <a href="#main-content">Inicio</a>
+          <h3>Company</h3>
+          <a href="#proceso">Our process</a>
+          <a href="#contacto">Request estimate</a>
+          <a href="#main-content">Back to top</a>
         </div>
         <div>
-          <h3>Contacto</h3>
-          <a href="mailto:hola@example.com">hola@example.com</a>
+          <h3>Contact</h3>
+          <a href="mailto:info@floridaelectrostatic.com">info@floridaelectrostatic.com</a>
           <a href="tel:+10000000000">+1 000 000 0000</a>
         </div>
       </div>
       <div className="container footer__bottom">
-        <span>© 2026 Fast Answer Agency</span>
+        <span>&copy; 2026 Florida ElectroStatic</span>
       </div>
     </footer>
   );

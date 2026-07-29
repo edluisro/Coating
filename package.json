@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && node scripts/fix-export-paths.mjs",
+    "deploy:dreamhost": "powershell -ExecutionPolicy Bypass -File scripts/deploy-dreamhost.ps1",
     "start": "next start",
     "lint": "next lint"
   },

@@ -6,10 +6,10 @@ export function FinalCta() {
     <section className="finalCta" aria-labelledby="final-cta-title">
       <Reveal className="container finalCta__card">
         <div>
-          <p className="eyebrow">Siguiente paso</p>
-          <h2 id="final-cta-title">Deja la base lista y empieza a personalizar.</h2>
+          <p className="eyebrow">Next Step</p>
+          <h2 id="final-cta-title">Get a factory-like finish without replacement costs.</h2>
         </div>
-        <Button href="#contacto">Empezar ahora</Button>
+        <Button href="#contacto">Request Your Free Estimate</Button>
       </Reveal>
     </section>
   );

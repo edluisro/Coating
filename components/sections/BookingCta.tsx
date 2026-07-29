@@ -6,28 +6,29 @@ export function BookingCta() {
     <section className="bookingCta" id="contacto" aria-labelledby="booking-title">
       <div className="container bookingCta__grid">
         <Reveal variant="slide-right">
-          <p className="eyebrow">Contacto</p>
-          <h2 id="booking-title">Cuentanos que necesitas construir.</h2>
+          <p className="eyebrow">Request an Estimate</p>
+          <h2 id="booking-title">Tell us what you need restored.</h2>
           <p>
-            Deja los datos principales y usa este bloque como punto de partida para conectar tu CRM, email o WhatsApp.
+            Share the metal surfaces, property type and timeline. We will review your project and recommend the best
+            restoration approach.
           </p>
         </Reveal>
         <Reveal variant="slide-left" delay={120}>
-          <form className="formPanel" aria-label="Formulario de proyecto">
-            <Input id="booking-name" label="Nombre" name="name" required />
-            <Input id="booking-email" label="Email" name="email" type="email" required />
-            <Select id="booking-type" label="Tipo de proyecto" name="projectType" defaultValue="">
+          <form className="formPanel" aria-label="Project estimate form">
+            <Input id="booking-name" label="Full Name" name="name" required />
+            <Input id="booking-email" label="Email Address" name="email" type="email" required />
+            <Select id="booking-type" label="Project Type" name="projectType" defaultValue="">
               <option value="" disabled>
-                Selecciona una opcion
+                Select one option
               </option>
-              <option>Landing nueva</option>
-              <option>Rediseno</option>
-              <option>Automatizacion</option>
+              <option>Commercial property</option>
+              <option>Industrial facility</option>
+              <option>Residential community</option>
             </Select>
-            <Input id="booking-date" label="Fecha ideal" name="date" type="date" />
-            <Textarea id="booking-message" label="Mensaje" name="message" />
+            <Input id="booking-date" label="Preferred Timeline" name="date" type="date" />
+            <Textarea id="booking-message" label="Project Details" name="message" />
             <button className="btn btn-primary formPanel__submit" type="submit">
-              Enviar proyecto
+              Request My Estimate
             </button>
           </form>
         </Reveal>

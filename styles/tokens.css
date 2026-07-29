@@ -1,6 +1,7 @@
 :root {
-  --font-heading: 'Poppins';
-  --font-body: 'Poppins';
+  --font-heading: var(--font-poppins);
+  --font-body: var(--font-poppins);
+  --font-accent: var(--font-poppins);
 
   --color-primary: #0D47A1;
   --color-primary-700: #0A3A85;
@@ -31,7 +32,7 @@
   --fs-hero: clamp(2.5rem, 5vw, 4.75rem);
   --fs-h1: clamp(2.125rem, 4vw, 3.5rem);
   --fs-h2: 27px;
-  --fs-h3: clamp(1.25rem, 2vw, 1.5rem);
+  --fs-h3: 18px;
   --fs-h4: 1.125rem;
   --fs-body-lg: 1.125rem;
   --fs-body: 1rem;
