@@ -3,6 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { ApplicationsGrid } from "@/components/sections/ApplicationsGrid";
 import { HeroLead } from "@/components/sections/HeroLead";
 import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
+import { ProjectGallery } from "@/components/sections/ProjectGallery";
 import { ServiceAreas } from "@/components/sections/ServiceAreas";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { WhatIsElectrostatic } from "@/components/sections/WhatIsElectrostatic";
@@ -17,6 +18,7 @@ export default function Home() {
         <WhyRestoreSection />
         <WhatIsElectrostatic />
         <ApplicationsGrid />
+        <ProjectGallery />
         <ServiceAreas />
         <ServicesGrid />
         <ProcessTimeline />
