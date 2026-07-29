@@ -153,6 +153,8 @@ function ProjectCard({ project, index, onOpen }: { project: Project; index: numb
           type="button"
           onClick={onOpen}
           aria-label={`Open gallery for ${project.title}`}
+          data-gallery-title={project.title}
+          data-gallery-items={JSON.stringify(project.gallery)}
         >
           <Image
             src={project.image.src}

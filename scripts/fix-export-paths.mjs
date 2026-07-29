@@ -109,6 +109,126 @@ const behaviorScript = String.raw`<script>
 
   window.addEventListener("scroll", syncHeader, { passive: true });
   syncHeader();
+
+  const galleryButtons = document.querySelectorAll(".projectGallery__media[data-gallery-items]");
+  let activeGallery = null;
+
+  const closeGallery = () => {
+    if (!activeGallery) {
+      return;
+    }
+
+    activeGallery.modal.remove();
+    document.body.style.overflow = activeGallery.previousOverflow;
+    activeGallery = null;
+  };
+
+  const renderGalleryImage = () => {
+    if (!activeGallery) {
+      return;
+    }
+
+    const item = activeGallery.items[activeGallery.index];
+    if (!item) {
+      return;
+    }
+
+    activeGallery.image.src = item.src;
+    activeGallery.image.alt = item.alt || activeGallery.title;
+    activeGallery.count.textContent = (activeGallery.index + 1) + " / " + activeGallery.items.length;
+  };
+
+  const goGallery = (direction) => {
+    if (!activeGallery) {
+      return;
+    }
+
+    const total = activeGallery.items.length;
+    activeGallery.index = (activeGallery.index + direction + total) % total;
+    renderGalleryImage();
+  };
+
+  const openGallery = (button) => {
+    let items = [];
+    try {
+      items = JSON.parse(button.getAttribute("data-gallery-items") || "[]");
+    } catch {
+      items = [];
+    }
+
+    if (!Array.isArray(items) || items.length === 0) {
+      return;
+    }
+
+    closeGallery();
+
+    const title = button.getAttribute("data-gallery-title") || "Project image gallery";
+    const previousOverflow = document.body.style.overflow;
+    const modal = document.createElement("div");
+    modal.className = "lightbox";
+    modal.setAttribute("role", "dialog");
+    modal.setAttribute("aria-modal", "true");
+    modal.setAttribute("aria-label", title + " project gallery");
+
+    modal.innerHTML =
+      '<button class="lightbox__backdrop" type="button" aria-label="Close gallery"></button>' +
+      '<div class="lightbox__dialog">' +
+      '<div class="lightbox__topbar">' +
+      '<p></p>' +
+      '<button class="lightbox__close" type="button" aria-label="Close gallery">x</button>' +
+      '</div>' +
+      '<button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Previous image"><span aria-hidden="true">&lt;</span></button>' +
+      '<div class="lightbox__frame"><img class="lightbox__image" alt="" /></div>' +
+      '<button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Next image"><span aria-hidden="true">&gt;</span></button>' +
+      '<p class="lightbox__count"></p>' +
+      '</div>';
+
+    const image = modal.querySelector(".lightbox__image");
+    const count = modal.querySelector(".lightbox__count");
+    const titleElement = modal.querySelector(".lightbox__topbar p");
+    titleElement.textContent = title;
+
+    modal.querySelector(".lightbox__backdrop")?.addEventListener("click", closeGallery);
+    modal.querySelector(".lightbox__close")?.addEventListener("click", closeGallery);
+    modal.querySelector(".lightbox__nav--prev")?.addEventListener("click", () => goGallery(-1));
+    modal.querySelector(".lightbox__nav--next")?.addEventListener("click", () => goGallery(1));
+
+    activeGallery = {
+      modal,
+      items,
+      index: 0,
+      image,
+      count,
+      title,
+      previousOverflow,
+    };
+
+    document.body.style.overflow = "hidden";
+    document.body.appendChild(modal);
+    renderGalleryImage();
+  };
+
+  galleryButtons.forEach((button) => {
+    button.addEventListener("click", () => openGallery(button));
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (!activeGallery) {
+      return;
+    }
+
+    if (event.key === "Escape") {
+      closeGallery();
+    }
+
+    if (event.key === "ArrowLeft") {
+      goGallery(-1);
+    }
+
+    if (event.key === "ArrowRight") {
+      goGallery(1);
+    }
+  });
 })();
 </script>`;
 
