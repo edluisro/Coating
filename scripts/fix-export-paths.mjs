@@ -155,6 +155,48 @@ const behaviorScript = String.raw`<script>
   window.addEventListener("scroll", syncHeader, { passive: true });
   syncHeader();
 
+  const faqItems = Array.from(document.querySelectorAll("[data-faq-item]"));
+
+  const syncFaqPanel = (item, open) => {
+    const button = item.querySelector("[data-faq-button]");
+    const panel = item.querySelector("[data-faq-panel]");
+
+    if (!(button instanceof HTMLElement) || !(panel instanceof HTMLElement)) {
+      return;
+    }
+
+    item.classList.toggle("is-open", open);
+    button.setAttribute("aria-expanded", String(open));
+    panel.hidden = false;
+    panel.style.maxHeight = open ? panel.scrollHeight + "px" : "0px";
+    panel.style.opacity = open ? "1" : "0";
+
+    if (!open) {
+      window.setTimeout(() => {
+        if (!item.classList.contains("is-open")) {
+          panel.hidden = true;
+        }
+      }, 360);
+    }
+  };
+
+  faqItems.forEach((item, index) => {
+    syncFaqPanel(item, item.classList.contains("is-open") || index === 0);
+
+    const button = item.querySelector("[data-faq-button]");
+    if (!(button instanceof HTMLElement)) {
+      return;
+    }
+
+    button.addEventListener("click", () => {
+      const shouldOpen = !item.classList.contains("is-open");
+
+      faqItems.forEach((otherItem) => {
+        syncFaqPanel(otherItem, shouldOpen && otherItem === item);
+      });
+    });
+  });
+
   const galleryButtons = document.querySelectorAll(".projectGallery__media[data-gallery-items]");
   let activeGallery = null;
 
