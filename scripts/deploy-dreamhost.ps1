@@ -114,7 +114,7 @@ try {
     }
 
     Write-Host 'Empaquetando export estatico...'
-    & tar.exe -czf $localArchive -C $exportDir .
+    & tar.exe --format ustar --exclude '_buildManifest.js' --exclude '_clientMiddlewareManifest.js' --exclude '_ssgManifest.js' -czf $localArchive -C $exportDir .
     if ($LASTEXITCODE -ne 0) {
         throw 'No pude empaquetar el export estatico.'
     }
