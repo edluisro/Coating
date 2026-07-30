@@ -2867,10 +2867,10 @@ p {
     linear-gradient(160deg, #0d47a1, #082e69),
     linear-gradient(145deg, rgba(244, 123, 32, 0.18), rgba(255, 255, 255, 0.04));
   transition:
-    transform 3100ms ease-in-out,
-    height 3100ms ease-in-out,
-    border-radius 3100ms ease-in-out,
-    box-shadow 3100ms ease-in-out;
+    transform 1100ms ease-in-out,
+    height 1100ms ease-in-out,
+    border-radius 1100ms ease-in-out,
+    box-shadow 1100ms ease-in-out;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
 }
 
@@ -2931,7 +2931,7 @@ p {
   line-height: 0.9;
   animation: processNumberPop 900ms ease-in-out both;
   text-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
-  transition: font-size 800ms ease-in-out, color 800ms ease-in-out;
+  transition: font-size 400ms ease-in-out, color 400ms ease-in-out;
 }
 
 .processTimeline__card:hover .processTimeline__number {
@@ -2950,9 +2950,9 @@ p {
   color: white;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
   transition:
-    background-color 800ms ease-in-out,
-    color 800ms ease-in-out,
-    box-shadow 800ms ease-in-out;
+    background-color 400ms ease-in-out,
+    color 400ms ease-in-out,
+    box-shadow 400ms ease-in-out;
 }
 
 .processTimeline__card:hover .processTimeline__icon {
@@ -2971,7 +2971,7 @@ p {
   display: grid;
   gap: 6px;
   opacity: 0.94;
-  transition: opacity 1100ms ease-in-out, transform 1100ms ease-in-out;
+  transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
 }
 
 .processTimeline__card:hover .processTimeline__coverTitleWrap {
