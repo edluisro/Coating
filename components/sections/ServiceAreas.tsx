@@ -1,48 +1,80 @@
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 
-const cities = [
-  "Miami",
-  "Miami Beach",
-  "Brickell",
-  "Downtown Miami",
-  "Wynwood",
-  "Edgewater",
-  "Coral Gables",
-  "Coconut Grove",
-  "Key Biscayne",
-  "Doral",
-  "Medley",
-  "Hialeah",
-  "Hialeah Gardens",
-  "Miami Lakes",
-  "Kendall",
-  "Pinecrest",
-  "Palmetto Bay",
-  "Cutler Bay",
-  "Homestead",
-  "Aventura",
-  "North Miami",
-  "North Miami Beach",
-  "Sunny Isles Beach",
-  "Bal Harbour",
-  "Surfside",
-  "Hollywood",
-  "Hallandale Beach",
-  "Pembroke Pines",
-  "Miramar",
-  "Davie",
-  "Plantation",
-  "Sunrise",
-  "Fort Lauderdale",
-  "Lauderhill",
-  "Pompano Beach",
-  "Deerfield Beach",
-  "Boca Raton",
-  "Delray Beach",
-  "Boynton Beach",
-  "West Palm Beach",
+const serviceAreaGroups = [
+  {
+    label: "Miami-Dade Core",
+    description: "Urban, coastal and commercial corridors.",
+    cities: [
+      { name: "Miami", x: 298, y: 440 },
+      { name: "Miami Beach", x: 335, y: 430 },
+      { name: "Brickell", x: 306, y: 450 },
+      { name: "Downtown Miami", x: 303, y: 434 },
+      { name: "Wynwood", x: 298, y: 420 },
+      { name: "Edgewater", x: 306, y: 414 },
+      { name: "Coral Gables", x: 277, y: 462 },
+      { name: "Coconut Grove", x: 291, y: 472 },
+      { name: "Key Biscayne", x: 338, y: 480 },
+    ],
+  },
+  {
+    label: "Miami-Dade West & South",
+    description: "Industrial, residential and suburban service areas.",
+    cities: [
+      { name: "Doral", x: 258, y: 410 },
+      { name: "Medley", x: 250, y: 390 },
+      { name: "Hialeah", x: 268, y: 382 },
+      { name: "Hialeah Gardens", x: 254, y: 374 },
+      { name: "Miami Lakes", x: 265, y: 356 },
+      { name: "Kendall", x: 272, y: 506 },
+      { name: "Pinecrest", x: 286, y: 492 },
+      { name: "Palmetto Bay", x: 291, y: 532 },
+      { name: "Cutler Bay", x: 296, y: 552 },
+      { name: "Homestead", x: 304, y: 586 },
+    ],
+  },
+  {
+    label: "North Miami & Beaches",
+    description: "Northern coastal communities and condo corridors.",
+    cities: [
+      { name: "Aventura", x: 324, y: 348 },
+      { name: "North Miami", x: 304, y: 362 },
+      { name: "North Miami Beach", x: 318, y: 356 },
+      { name: "Sunny Isles Beach", x: 337, y: 340 },
+      { name: "Bal Harbour", x: 339, y: 382 },
+      { name: "Surfside", x: 338, y: 394 },
+    ],
+  },
+  {
+    label: "Broward County",
+    description: "Commercial centers from Hollywood to Deerfield Beach.",
+    cities: [
+      { name: "Hollywood", x: 318, y: 322 },
+      { name: "Hallandale Beach", x: 330, y: 335 },
+      { name: "Pembroke Pines", x: 282, y: 316 },
+      { name: "Miramar", x: 278, y: 334 },
+      { name: "Davie", x: 300, y: 296 },
+      { name: "Plantation", x: 310, y: 282 },
+      { name: "Sunrise", x: 300, y: 270 },
+      { name: "Fort Lauderdale", x: 320, y: 328 },
+      { name: "Lauderhill", x: 306, y: 292 },
+      { name: "Pompano Beach", x: 330, y: 262 },
+      { name: "Deerfield Beach", x: 336, y: 236 },
+    ],
+  },
+  {
+    label: "Palm Beach County",
+    description: "Northern service area for commercial and institutional projects.",
+    cities: [
+      { name: "Boca Raton", x: 336, y: 220 },
+      { name: "Delray Beach", x: 340, y: 202 },
+      { name: "Boynton Beach", x: 342, y: 184 },
+      { name: "West Palm Beach", x: 344, y: 214 },
+    ],
+  },
 ];
+
+const defaultCity = serviceAreaGroups[0].cities[0];
 
 const partners = [
   "Commercial Property Owners",
@@ -160,11 +192,24 @@ function SouthFloridaMap() {
             West Palm Beach
           </text>
         </g>
+
+        <g
+          className="serviceAreas__selectedMarker"
+          data-service-area-marker
+          transform={`translate(${defaultCity.x} ${defaultCity.y})`}
+        >
+          <circle className="serviceAreas__selectedHalo" cx="0" cy="0" r="36" />
+          <path d="M0-31C17-31 31-17 31 0C31 16 8 43 0 54C-8 43-31 16-31 0C-31-17-17-31 0-31Z" />
+          <circle cx="0" cy="0" r="9" />
+          <text x="42" y="5" className="serviceAreas__selectedLabel" data-service-area-label>
+            Miami
+          </text>
+        </g>
       </svg>
 
       <div className="serviceAreas__mapCaption">
         <span>SOUTH FLORIDA COVERAGE</span>
-        <strong>Miami-Dade, Broward and Palm Beach County service area</strong>
+        <strong data-service-area-status>Miami selected in Miami-Dade Core</strong>
       </div>
     </div>
   );
@@ -180,11 +225,40 @@ export function ServiceAreas() {
           </Reveal>
 
           <Reveal variant="fade-in" delay={120}>
-            <ul className="serviceAreas__cities" aria-label="Areas we regularly serve">
-              {cities.map((city) => (
-                <li key={city}>{city}</li>
-              ))}
-            </ul>
+            <div className="serviceAreas__cityControls" aria-label="Areas we regularly serve">
+              {serviceAreaGroups.map((group) => {
+                const isDefaultGroup = group.cities.some((city) => city.name === defaultCity.name);
+
+                return (
+                  <label className={`serviceAreas__dropdown${isDefaultGroup ? " is-selected" : ""}`} key={group.label}>
+                    <span>
+                      <strong>{group.label}</strong>
+                      <small>{group.description}</small>
+                    </span>
+                    <select
+                      className="serviceAreas__select"
+                      defaultValue={isDefaultGroup ? defaultCity.name : ""}
+                      data-service-area-select
+                    >
+                      <option value="" disabled>
+                        Choose a city
+                      </option>
+                      {group.cities.map((city) => (
+                        <option
+                          key={city.name}
+                          value={city.name}
+                          data-x={city.x}
+                          data-y={city.y}
+                          data-sector={group.label}
+                        >
+                          {city.name}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                );
+              })}
+            </div>
           </Reveal>
         </div>
 

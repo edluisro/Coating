@@ -160,6 +160,48 @@ const behaviorScript = String.raw`<script>
   window.addEventListener("scroll", syncHeader, { passive: true });
   syncHeader();
 
+  const serviceAreaMarker = document.querySelector("[data-service-area-marker]");
+  const serviceAreaLabel = document.querySelector("[data-service-area-label]");
+  const serviceAreaStatus = document.querySelector("[data-service-area-status]");
+  const serviceAreaSelects = document.querySelectorAll("[data-service-area-select]");
+
+  const updateServiceAreaMap = (select) => {
+    if (!(select instanceof HTMLSelectElement)) return;
+    const option = select.selectedOptions[0];
+    if (!(option instanceof HTMLOptionElement)) return;
+
+    const city = option.value;
+    const x = option.dataset.x;
+    const y = option.dataset.y;
+    const sector = option.dataset.sector || "South Florida";
+
+    if (!city || !x || !y) return;
+
+    if (serviceAreaMarker instanceof SVGElement) {
+      serviceAreaMarker.setAttribute("transform", "translate(" + x + " " + y + ")");
+    }
+
+    if (serviceAreaLabel) {
+      serviceAreaLabel.textContent = city;
+    }
+
+    if (serviceAreaStatus) {
+      serviceAreaStatus.textContent = city + " selected in " + sector;
+    }
+
+    serviceAreaSelects.forEach((otherSelect) => {
+      if (otherSelect !== select && otherSelect instanceof HTMLSelectElement) {
+        otherSelect.value = "";
+      }
+
+      otherSelect.closest(".serviceAreas__dropdown")?.classList.toggle("is-selected", otherSelect === select);
+    });
+  };
+
+  serviceAreaSelects.forEach((select) => {
+    select.addEventListener("change", () => updateServiceAreaMap(select));
+  });
+
   const leadPopup = document.querySelector(".leadPopup");
   const leadPopupDialog = document.querySelector(".leadPopup__dialog");
   const leadPopupCloseButtons = document.querySelectorAll("[data-lead-popup-close]");
