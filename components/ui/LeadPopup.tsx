@@ -49,11 +49,12 @@ export function LeadPopup() {
                 <option value="" disabled>
                   Select one option
                 </option>
-                <option>Commercial property</option>
-                <option>Industrial facility</option>
-                <option>Condominium or HOA</option>
-                <option>Storefront or retail center</option>
-                <option>Other metal restoration project</option>
+                <option>Fences and Railings</option>
+                <option>Storefronts and Entry Systems</option>
+                <option>Metal Doors and Frames</option>
+                <option>Equipment and Industrial Assets</option>
+                <option>Gates, Handrails and Common Areas</option>
+                <option>Custom Restoration Projects</option>
               </select>
             </label>
 
