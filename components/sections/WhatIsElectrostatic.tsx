@@ -10,23 +10,27 @@ const benefits = [
   "Long-lasting protection against corrosion, weather and daily wear.",
 ];
 
-const surfaces = [
-  { name: "Aluminum Fences", type: "Exterior metal" },
-  { name: "Steel Fences", type: "Exterior metal" },
-  { name: "Railings", type: "Safety systems" },
-  { name: "Storefront Frames", type: "Commercial fronts" },
-  { name: "Hollow Metal Doors", type: "Access points" },
-  { name: "Window Frames", type: "Architectural metal" },
-  { name: "Security Gates", type: "Access control" },
-  { name: "Staircases", type: "High-traffic metal" },
-  { name: "Elevator Doors", type: "Interior finishes" },
-  { name: "Metal Partitions", type: "Facility assets" },
-  { name: "Industrial Equipment", type: "Industrial assets" },
-  { name: "Structural Steel", type: "Heavy-duty metal" },
-  { name: "Metal Furniture", type: "Commercial fixtures" },
-  { name: "Warehouse Racking", type: "Warehouse systems" },
-  { name: "Loading Dock Equipment", type: "Operational assets" },
-  { name: "Decorative Metal Features", type: "Premium details" },
+const surfaceGroups = [
+  {
+    title: "Exterior Metal Surfaces",
+    description: "High-exposure assets restored for durability, appearance and weather resistance.",
+    items: ["Aluminum Fences", "Steel Fences", "Railings", "Security Gates", "Staircases"],
+  },
+  {
+    title: "Commercial Building Systems",
+    description: "Visible property elements refinished without unnecessary replacement or downtime.",
+    items: ["Storefront Frames", "Hollow Metal Doors", "Window Frames", "Elevator Doors"],
+  },
+  {
+    title: "Industrial & Facility Assets",
+    description: "Operational metal surfaces protected with a smooth, professional coating system.",
+    items: ["Industrial Equipment", "Structural Steel", "Warehouse Racking", "Loading Dock Equipment"],
+  },
+  {
+    title: "Specialty Metal Features",
+    description: "Interior, decorative and facility details restored with a cleaner premium finish.",
+    items: ["Metal Partitions", "Metal Furniture", "Decorative Metal Features"],
+  },
 ];
 
 const benefitIcons = [
@@ -58,7 +62,7 @@ const benefitIcons = [
   </svg>,
 ];
 
-const surfaceIcons = [
+const surfaceGroupIcons = [
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
     <path d="M5 19V7" />
     <path d="M19 19V7" />
@@ -151,22 +155,37 @@ export function WhatIsElectrostatic() {
             <div className="whatIsElectrostatic__surfacesBlock stack-md">
               <h3 className="whatIsElectrostatic__subheading">Common Metal Surfaces That Can Be Restored</h3>
               <Reveal variant="fade-in" delay={30}>
-                <ul className="whatIsElectrostatic__surfaces" aria-label="Common metal surfaces that can be restored">
-                  {surfaces.map((surface, index) => (
-                    <li className="whatIsElectrostatic__surfaceItem" key={surface.name}>
-                      <span className="whatIsElectrostatic__surfaceIcon" aria-hidden="true">
-                        {surfaceIcons[index % surfaceIcons.length]}
-                      </span>
-                      <span className="whatIsElectrostatic__surfaceCopy">
-                        <span className="whatIsElectrostatic__surfaceName">{surface.name}</span>
-                        <span className="whatIsElectrostatic__surfaceType">{surface.type}</span>
-                      </span>
-                      <span className="whatIsElectrostatic__surfaceIndex" aria-hidden="true">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                    </li>
+                <div className="whatIsElectrostatic__surfaces" aria-label="Common metal surfaces that can be restored">
+                  {surfaceGroups.map((group, index) => (
+                    <details className="whatIsElectrostatic__surfaceGroup" key={group.title} open={index === 0}>
+                      <summary className="whatIsElectrostatic__surfaceSummary">
+                        <span className="whatIsElectrostatic__surfaceIcon" aria-hidden="true">
+                          {surfaceGroupIcons[index % surfaceGroupIcons.length]}
+                        </span>
+                        <span className="whatIsElectrostatic__surfaceSummaryCopy">
+                          <span className="whatIsElectrostatic__surfaceName">{group.title}</span>
+                          <span className="whatIsElectrostatic__surfaceType">{group.description}</span>
+                        </span>
+                        <span className="whatIsElectrostatic__surfaceCount" aria-label={`${group.items.length} surfaces`}>
+                          {String(group.items.length).padStart(2, "0")}
+                        </span>
+                        <span className="whatIsElectrostatic__surfaceChevron" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="m6 9 6 6 6-6" />
+                          </svg>
+                        </span>
+                      </summary>
+                      <ul className="whatIsElectrostatic__surfaceList">
+                        {group.items.map((surface) => (
+                          <li className="whatIsElectrostatic__surfaceItem" key={surface}>
+                            <span aria-hidden="true" />
+                            {surface}
+                          </li>
+                        ))}
+                      </ul>
+                    </details>
                   ))}
-                </ul>
+                </div>
               </Reveal>
             </div>
           </Reveal>

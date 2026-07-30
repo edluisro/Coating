@@ -1475,26 +1475,19 @@ p {
 
 .whatIsElectrostatic__surfaces {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  gap: 12px;
 }
 
-.whatIsElectrostatic__surfaceItem {
+.whatIsElectrostatic__surfaceGroup {
   position: relative;
   isolation: isolate;
-  display: grid;
-  grid-template-columns: 42px minmax(0, 1fr) auto;
-  gap: 12px;
-  align-items: center;
-  min-height: 86px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.095), rgba(255, 255, 255, 0.035)),
     rgba(255, 255, 255, 0.045);
-  padding: 16px 14px;
-  box-shadow: 0 16px 38px rgba(3, 8, 18, 0.16);
+  box-shadow: 0 18px 44px rgba(3, 8, 18, 0.16);
   transition:
     transform 520ms var(--ease-out-soft),
     border-color 520ms var(--ease-out-soft),
@@ -1502,25 +1495,25 @@ p {
     box-shadow 520ms var(--ease-out-soft);
 }
 
-.whatIsElectrostatic__surfaceItem::before {
+.whatIsElectrostatic__surfaceGroup::before {
   content: "";
   position: absolute;
   inset: 0 auto 0 0;
   z-index: -1;
-  width: 4px;
+  width: 5px;
   background: var(--color-accent);
-  opacity: 0.75;
+  opacity: 0.82;
   transition: width 520ms var(--ease-out-soft), opacity 520ms var(--ease-out-soft);
 }
 
-.whatIsElectrostatic__surfaceItem::after {
+.whatIsElectrostatic__surfaceGroup::after {
   content: "";
   position: absolute;
-  right: -44px;
-  top: -48px;
+  right: -80px;
+  top: -90px;
   z-index: -1;
-  width: 118px;
-  height: 118px;
+  width: 220px;
+  height: 220px;
   border-radius: 999px;
   background: radial-gradient(circle, rgba(244, 123, 32, 0.18), transparent 68%);
   opacity: 0;
@@ -1528,23 +1521,42 @@ p {
   transition: opacity 520ms var(--ease-out-soft), transform 520ms var(--ease-out-soft);
 }
 
-.whatIsElectrostatic__surfaceItem:hover {
-  transform: translateY(-4px);
-  border-color: rgba(244, 123, 32, 0.42);
+.whatIsElectrostatic__surfaceGroup:hover,
+.whatIsElectrostatic__surfaceGroup[open] {
+  transform: translateY(-2px);
+  border-color: rgba(244, 123, 32, 0.38);
   background:
-    linear-gradient(135deg, rgba(244, 123, 32, 0.14), rgba(255, 255, 255, 0.055)),
+    linear-gradient(135deg, rgba(244, 123, 32, 0.12), rgba(255, 255, 255, 0.055)),
     rgba(255, 255, 255, 0.07);
-  box-shadow: 0 22px 52px rgba(3, 8, 18, 0.24), 0 0 0 1px rgba(244, 123, 32, 0.08);
+  box-shadow: 0 24px 56px rgba(3, 8, 18, 0.22), 0 0 0 1px rgba(244, 123, 32, 0.08);
 }
 
-.whatIsElectrostatic__surfaceItem:hover::before {
+.whatIsElectrostatic__surfaceGroup:hover::before,
+.whatIsElectrostatic__surfaceGroup[open]::before {
   width: 100%;
-  opacity: 0.1;
+  opacity: 0.08;
 }
 
-.whatIsElectrostatic__surfaceItem:hover::after {
+.whatIsElectrostatic__surfaceGroup:hover::after,
+.whatIsElectrostatic__surfaceGroup[open]::after {
   opacity: 1;
   transform: scale(1);
+}
+
+.whatIsElectrostatic__surfaceSummary {
+  position: relative;
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr) auto auto;
+  gap: 14px;
+  align-items: center;
+  min-height: 92px;
+  cursor: pointer;
+  padding: 18px 18px 18px 20px;
+  list-style: none;
+}
+
+.whatIsElectrostatic__surfaceSummary::-webkit-details-marker {
+  display: none;
 }
 
 .whatIsElectrostatic__surfaceIcon {
@@ -1562,7 +1574,8 @@ p {
   transition: transform 520ms var(--ease-out-soft), color 520ms var(--ease-out-soft), background 520ms var(--ease-out-soft);
 }
 
-.whatIsElectrostatic__surfaceItem:hover .whatIsElectrostatic__surfaceIcon {
+.whatIsElectrostatic__surfaceGroup:hover .whatIsElectrostatic__surfaceIcon,
+.whatIsElectrostatic__surfaceGroup[open] .whatIsElectrostatic__surfaceIcon {
   transform: rotate(-3deg) scale(1.04);
   background: var(--color-accent);
   color: #ffffff;
@@ -1573,9 +1586,9 @@ p {
   height: 21px;
 }
 
-.whatIsElectrostatic__surfaceCopy {
+.whatIsElectrostatic__surfaceSummaryCopy {
   display: grid;
-  gap: 4px;
+  gap: 5px;
   min-width: 0;
 }
 
@@ -1595,18 +1608,98 @@ p {
   text-transform: uppercase;
 }
 
-.whatIsElectrostatic__surfaceIndex {
-  align-self: start;
-  color: rgba(255, 255, 255, 0.18);
-  font-size: 22px;
+.whatIsElectrostatic__surfaceCount {
+  display: grid;
+  place-items: center;
+  min-width: 38px;
+  height: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 12px;
   font-weight: var(--fw-extrabold);
+  letter-spacing: 0.06em;
   line-height: 1;
-  transition: color 520ms var(--ease-out-soft), transform 520ms var(--ease-out-soft);
+  background: rgba(255, 255, 255, 0.06);
 }
 
-.whatIsElectrostatic__surfaceItem:hover .whatIsElectrostatic__surfaceIndex {
-  color: rgba(255, 255, 255, 0.34);
-  transform: translateX(-2px);
+.whatIsElectrostatic__surfaceChevron {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  transition: transform 420ms var(--ease-out-soft), background 420ms var(--ease-out-soft);
+}
+
+.whatIsElectrostatic__surfaceChevron svg {
+  width: 18px;
+  height: 18px;
+}
+
+.whatIsElectrostatic__surfaceGroup[open] .whatIsElectrostatic__surfaceChevron {
+  transform: rotate(180deg);
+  background: rgba(244, 123, 32, 0.24);
+}
+
+.whatIsElectrostatic__surfaceList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0 18px 18px 20px;
+  list-style: none;
+  animation: surfaceAccordionIn 520ms var(--ease-out-soft) both;
+}
+
+.whatIsElectrostatic__surfaceItem {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  min-width: 0;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+  background: rgba(3, 8, 18, 0.16);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 13px;
+  font-weight: var(--fw-semibold);
+  line-height: 1.25;
+  padding: 11px 12px;
+  transition:
+    transform 420ms var(--ease-out-soft),
+    border-color 420ms var(--ease-out-soft),
+    background 420ms var(--ease-out-soft),
+    color 420ms var(--ease-out-soft);
+}
+
+.whatIsElectrostatic__surfaceItem span {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: var(--color-accent);
+  box-shadow: 0 0 16px rgba(244, 123, 32, 0.34);
+}
+
+.whatIsElectrostatic__surfaceItem:hover {
+  transform: translateY(-2px);
+  border-color: rgba(244, 123, 32, 0.32);
+  background: rgba(244, 123, 32, 0.12);
+  color: #ffffff;
+}
+
+@keyframes surfaceAccordionIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .whatIsElectrostatic__cta {
@@ -4356,10 +4449,6 @@ p {
     grid-template-columns: 1fr 1fr;
   }
 
-  .whatIsElectrostatic__surfaces {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
   .applications__industryList {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -4691,7 +4780,6 @@ p {
   }
 
   .whatIsElectrostatic__benefits,
-  .whatIsElectrostatic__surfaces,
   .serviceAreas__cities,
   .serviceAreas__partnerList,
   .applications__grid,
@@ -4703,6 +4791,25 @@ p {
 
   .applicationCard {
     padding: 24px;
+  }
+
+  .whatIsElectrostatic__surfaceSummary {
+    grid-template-columns: 42px minmax(0, 1fr) auto;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .whatIsElectrostatic__surfaceChevron {
+    grid-column: 3;
+    grid-row: 2;
+    justify-self: end;
+    width: 30px;
+    height: 30px;
+  }
+
+  .whatIsElectrostatic__surfaceList {
+    grid-template-columns: 1fr;
+    padding: 0 16px 16px;
   }
 
   .applications__quote {
