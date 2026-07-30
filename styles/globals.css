@@ -4562,6 +4562,97 @@ p {
     display: none;
   }
 
+  .navShell {
+    width: min(100% - 28px, 1360px);
+    margin-top: 18px;
+  }
+
+  .siteHeader.is-sticky .navShell {
+    width: min(100% - 28px, 1000px);
+  }
+
+  .mainNav {
+    grid-template-columns: 64px minmax(0, 1fr) 64px;
+    min-height: 70px;
+    padding: 6px 14px;
+  }
+
+  .navGroup,
+  .navCta {
+    display: none;
+  }
+
+  .brand--orb {
+    grid-column: 2;
+    display: flex;
+    justify-self: center;
+    width: 120px;
+    height: 58px;
+  }
+
+  .brandOrb {
+    width: 95px;
+    height: 95px;
+  }
+
+  .siteHeader.is-sticky .brandOrb {
+    width: 85px;
+    height: 85px;
+  }
+
+  .menuToggle {
+    grid-column: 1;
+    justify-self: start;
+    display: grid;
+  }
+
+  .mobileDrawer {
+    position: fixed;
+    inset: 104px 14px auto;
+    display: grid;
+    max-height: calc(100vh - 124px);
+    overflow: auto;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    background:
+      radial-gradient(circle at top center, rgba(255, 255, 255, 0.05), transparent 34%),
+      rgba(14, 18, 28, 0.96);
+    color: white;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-12px);
+    transition: opacity 0.28s var(--ease-standard), transform 0.28s var(--ease-standard);
+  }
+
+  .mobileDrawer.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .mobileDrawer__panel {
+    display: grid;
+    align-content: start;
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .mobileDrawer__panel a:not(.btn) {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-block: 12px;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: var(--fw-semibold);
+  }
+
+  .mobileDrawer__panel .btn {
+    width: 100%;
+    margin-top: 2px;
+  }
+
   .whyRestore__card {
     width: min(100%, 460px);
   }
@@ -4828,8 +4919,8 @@ p {
 
   .mainNav {
     grid-template-columns: 52px minmax(0, 1fr) 52px;
-    min-height: 78px;
-    padding-inline: 18px;
+    min-height: 70px;
+    padding-inline: 14px;
   }
 
   .navGroup,
@@ -4841,8 +4932,8 @@ p {
     grid-column: 2;
     display: flex;
     justify-self: center;
-    width: 110px;
-    height: 58px;
+    width: 104px;
+    height: 54px;
   }
 
   .navShell {
@@ -4867,9 +4958,9 @@ p {
 
   .mobileDrawer {
     position: fixed;
-    inset: 98px 12px auto;
+    inset: 96px 12px auto;
     display: grid;
-    max-height: calc(100vh - 118px);
+    max-height: calc(100vh - 116px);
     overflow: auto;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 32px;
@@ -4892,18 +4983,18 @@ p {
   .mobileDrawer__panel {
     display: grid;
     align-content: start;
-    gap: var(--space-24);
+    gap: 12px;
     padding: 15px;
   }
 
   .mobileDrawer__panel a:not(.btn) {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    padding-block: var(--space-18);
+    padding-block: 12px;
     font-family: var(--font-heading);
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: var(--fw-semibold);
   }
 

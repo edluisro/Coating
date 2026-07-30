@@ -144,7 +144,7 @@ export function Header() {
   const ctaLabel = isScrolled || isMenuOpen ? "Request Now" : "Send Request";
 
   return (
-    <header className={`siteHeader ${isScrolled || isMenuOpen ? "is-sticky" : ""}`}>
+    <header className={`siteHeader ${isScrolled ? "is-sticky" : ""}`}>
       <a className="skipLink" href="#main-content">
         Saltar al contenido
       </a>
