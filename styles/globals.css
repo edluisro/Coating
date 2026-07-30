@@ -721,7 +721,7 @@ p {
 
 .navCta .btn {
   min-height: 52px;
-  border-radius: 25px;
+  border-radius: 12px;
   padding-inline: 26px;
   font-size: 12px;
   box-shadow: 0 16px 34px rgba(244, 123, 32, 0.22);
