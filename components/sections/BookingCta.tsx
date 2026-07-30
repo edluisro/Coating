@@ -19,11 +19,14 @@ export function BookingCta() {
             <Input id="booking-email" label="Email Address" name="email" type="email" required />
             <Select id="booking-type" label="Project Type" name="projectType" defaultValue="">
               <option value="" disabled>
-                Select one option
+                Select a service
               </option>
-              <option>Commercial property</option>
-              <option>Industrial facility</option>
-              <option>Residential community</option>
+              <option>Fences and Railings</option>
+              <option>Storefronts and Entry Systems</option>
+              <option>Metal Doors and Frames</option>
+              <option>Equipment and Industrial Assets</option>
+              <option>Gates, Handrails and Common Areas</option>
+              <option>Custom Restoration Projects</option>
             </Select>
             <Input id="booking-date" label="Preferred Timeline" name="date" type="date" />
             <Textarea id="booking-message" label="Project Details" name="message" />

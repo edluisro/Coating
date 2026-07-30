@@ -47,7 +47,7 @@ export function LeadPopup() {
               <span>Project Type</span>
               <select id="popup-project-type" name="projectType" defaultValue="">
                 <option value="" disabled>
-                  Select one option
+                  Select a service
                 </option>
                 <option>Fences and Railings</option>
                 <option>Storefronts and Entry Systems</option>
