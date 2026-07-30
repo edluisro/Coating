@@ -1942,6 +1942,11 @@ p {
   max-width: 65ch;
 }
 
+.applications__industriesNote {
+  width: 100%;
+  max-width: none;
+}
+
 .applications__industryList {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

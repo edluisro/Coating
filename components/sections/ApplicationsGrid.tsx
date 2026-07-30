@@ -202,7 +202,7 @@ export function ApplicationsGrid() {
                   ))}
                 </ul>
               </Reveal>
-              <p>
+              <p className="applications__industriesNote">
                 No two projects are exactly alike. Every property presents unique challenges, which is why we evaluate
                 each project individually before recommending the best preparation methods, coating systems and
                 application process. Our goal is always the same: deliver a durable finish that enhances appearance,
