@@ -130,7 +130,7 @@ try {
     }
 
     Write-Host 'Preparando release temporal...'
-    & ssh.exe -o StrictHostKeyChecking=accept-new -o PreferredAuthentications=password -o PubkeyAuthentication=no $remoteHost "rm -rf $remoteBackupDir $remoteReleaseDir $remoteArchive && mkdir -p $remoteReleaseDir"
+    & ssh.exe -o StrictHostKeyChecking=accept-new -o PreferredAuthentications=password -o PubkeyAuthentication=no $remoteHost "if [ -d $remoteBackupDir ]; then chmod -R u+rwX $remoteBackupDir; fi && if [ -d $remoteReleaseDir ]; then chmod -R u+rwX $remoteReleaseDir; fi && rm -rf $remoteBackupDir $remoteReleaseDir $remoteArchive && mkdir -p $remoteReleaseDir"
     if ($LASTEXITCODE -ne 0) {
         throw 'No pude preparar la carpeta temporal del deploy.'
     }
@@ -142,7 +142,7 @@ try {
     }
 
     Write-Host 'Activando nueva version del sitio...'
-    & ssh.exe -o StrictHostKeyChecking=accept-new -o PreferredAuthentications=password -o PubkeyAuthentication=no $remoteHost "tar -xzf $remoteArchive -C $remoteReleaseDir && rm -f $remoteArchive && chmod -R u+rwX $remoteReleaseDir && find $remoteReleaseDir -type d -exec chmod 755 {} + && find $remoteReleaseDir -type f -exec chmod 644 {} + && if [ -d $remoteBaseDir ]; then mv $remoteBaseDir $remoteBackupDir; fi && mv $remoteReleaseDir $remoteBaseDir && if [ -d $remoteBackupDir ]; then chmod -R u+rwX $remoteBackupDir; rm -rf $remoteBackupDir; fi"
+    & ssh.exe -o StrictHostKeyChecking=accept-new -o PreferredAuthentications=password -o PubkeyAuthentication=no $remoteHost "tar --no-same-owner --no-same-permissions -xzf $remoteArchive -C $remoteReleaseDir && rm -f $remoteArchive && chmod -R u+rwX $remoteReleaseDir && find $remoteReleaseDir -type d -exec chmod 755 {} + && find $remoteReleaseDir -type f -exec chmod 644 {} + && if [ -d $remoteBaseDir ]; then mv $remoteBaseDir $remoteBackupDir; fi && mv $remoteReleaseDir $remoteBaseDir && if [ -d $remoteBackupDir ]; then chmod -R u+rwX $remoteBackupDir; rm -rf $remoteBackupDir; fi"
     if ($LASTEXITCODE -ne 0) {
         throw 'No pude publicar el sitio en DreamHost.'
     }
