@@ -157,7 +157,13 @@ export function WhatIsElectrostatic() {
               <Reveal variant="fade-in" delay={30}>
                 <div className="whatIsElectrostatic__surfaces" aria-label="Common metal surfaces that can be restored">
                   {surfaceGroups.map((group, index) => (
-                    <details className="whatIsElectrostatic__surfaceGroup" key={group.title} open={index === 0}>
+                    <details
+                      className="whatIsElectrostatic__surfaceGroup"
+                      key={group.title}
+                      name="restored-surfaces"
+                      open={index === 0}
+                      data-surface-accordion
+                    >
                       <summary className="whatIsElectrostatic__surfaceSummary">
                         <span className="whatIsElectrostatic__surfaceIcon" aria-hidden="true">
                           {surfaceGroupIcons[index % surfaceGroupIcons.length]}

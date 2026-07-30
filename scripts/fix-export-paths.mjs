@@ -510,6 +510,21 @@ const behaviorScript = String.raw`<script>
     button.addEventListener("click", () => openGallery(button));
   });
 
+  const surfaceAccordions = Array.from(document.querySelectorAll("[data-surface-accordion]"));
+  surfaceAccordions.forEach((accordion) => {
+    accordion.addEventListener("toggle", () => {
+      if (!accordion.open) {
+        return;
+      }
+
+      surfaceAccordions.forEach((otherAccordion) => {
+        if (otherAccordion !== accordion) {
+          otherAccordion.open = false;
+        }
+      });
+    });
+  });
+
   window.addEventListener("keydown", (event) => {
     if (!activeGallery) {
       return;
