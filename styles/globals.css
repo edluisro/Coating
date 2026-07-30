@@ -4584,7 +4584,7 @@ p {
   }
 
   .siteHeader.is-sticky .navShell {
-    width: min(100% - 28px, 1000px);
+    width: min(100% - 28px, 600px);
   }
 
   .mainNav {
