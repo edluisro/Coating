@@ -229,9 +229,10 @@ const behaviorScript = String.raw`<script>
 
     const syncCarousel = () => {
       const activeIndex = getActiveIndex();
+      const activeDotIndex = Math.min(activeIndex, Math.max(0, dots.length - 1));
       dots.forEach((dot, index) => {
-        dot.classList.toggle("is-active", index === activeIndex);
-        dot.setAttribute("aria-current", index === activeIndex ? "true" : "false");
+        dot.classList.toggle("is-active", index === activeDotIndex);
+        dot.setAttribute("aria-current", index === activeDotIndex ? "true" : "false");
       });
 
       if (prevButton instanceof HTMLButtonElement) {

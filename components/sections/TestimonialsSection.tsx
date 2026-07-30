@@ -46,6 +46,8 @@ const testimonials: Testimonial[] = [
   },
 ];
 
+const testimonialDots = testimonials.slice(0, 3);
+
 const trustPoints = [
   "Professional Communication",
   "Reliable Scheduling",
@@ -125,14 +127,17 @@ export function TestimonialsSection() {
 
             <div className="testimonials__controls" aria-label="Testimonials controls">
               <button className="testimonials__arrow" type="button" aria-label="Previous testimonial" data-testimonials-prev>
-                ←
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15 5 8 12l7 7" />
+                  <path d="M9 12h11" />
+                </svg>
               </button>
               <div className="testimonials__dots" aria-label="Choose testimonial">
-                {testimonials.map((testimonial, index) => (
+                {testimonialDots.map((testimonial, index) => (
                   <button
                     className="testimonials__dot"
                     type="button"
-                    aria-label={`Show testimonial ${index + 1} from ${testimonial.city}`}
+                    aria-label={`Show testimonial view ${index + 1} starting near ${testimonial.city}`}
                     data-testimonials-dot
                     data-index={index}
                     key={`${testimonial.city}-dot`}
@@ -140,7 +145,10 @@ export function TestimonialsSection() {
                 ))}
               </div>
               <button className="testimonials__arrow" type="button" aria-label="Next testimonial" data-testimonials-next>
-                →
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 5l7 7-7 7" />
+                  <path d="M4 12h11" />
+                </svg>
               </button>
             </div>
           </div>
