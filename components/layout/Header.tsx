@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 
 const navItems = [
@@ -109,6 +109,7 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuId = useId();
+  const headerRef = useRef<HTMLElement>(null);
   const logoSrc = "https://res.cloudinary.com/wqsitnyu/image/upload/v1785449990/ChatGPT_Image_30_jul_2026__06_12_13_p.m.-removebg-preview_t2r0pe.png";
 
   useEffect(() => {
@@ -132,9 +133,18 @@ export function Header() {
     document.body.classList.add("menu-open");
     document.addEventListener("keydown", closeOnEscape);
 
+    const closeOnOutsideClick = (event: PointerEvent) => {
+      if (!headerRef.current?.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("pointerdown", closeOnOutsideClick);
+
     return () => {
       document.body.classList.remove("menu-open");
       document.removeEventListener("keydown", closeOnEscape);
+      document.removeEventListener("pointerdown", closeOnOutsideClick);
     };
   }, [isMenuOpen]);
 
@@ -144,7 +154,7 @@ export function Header() {
   const ctaLabel = isScrolled || isMenuOpen ? "Request Now" : "Send Request";
 
   return (
-    <header className={`siteHeader ${isScrolled ? "is-sticky" : ""}`}>
+    <header ref={headerRef} className={`siteHeader ${isScrolled ? "is-sticky" : ""}`}>
       <a className="skipLink" href="#main-content">
         Saltar al contenido
       </a>

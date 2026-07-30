@@ -766,10 +766,26 @@ p {
   height: 2px;
   border-radius: var(--radius-pill);
   background: currentColor;
+  transition:
+    transform 0.32s var(--ease-out-soft),
+    opacity 0.24s ease,
+    background-color 0.32s var(--ease-out-soft);
 }
 
 .menuToggle span + span {
   margin-top: 5px;
+}
+
+.menuToggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menuToggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.menuToggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .mobileDrawer {
@@ -4574,6 +4590,7 @@ p {
   .mainNav {
     grid-template-columns: 64px minmax(0, 1fr) 64px;
     min-height: 70px;
+    align-items: center;
     padding: 6px 14px;
   }
 
@@ -4602,8 +4619,14 @@ p {
 
   .menuToggle {
     grid-column: 1;
+    align-self: center;
     justify-self: start;
     display: grid;
+    margin: 0;
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .mobileDrawer {
@@ -4920,6 +4943,7 @@ p {
   .mainNav {
     grid-template-columns: 52px minmax(0, 1fr) 52px;
     min-height: 70px;
+    align-items: center;
     padding-inline: 14px;
   }
 
@@ -4943,8 +4967,14 @@ p {
 
   .menuToggle {
     grid-column: 1;
+    align-self: center;
     justify-self: start;
     display: grid;
+    margin: 0;
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .brandOrb {
