@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button";
 
 const navItems = [
   {
-    label: "Why Restore",
+    label: "Restore",
     href: "#why-restore",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -26,7 +26,7 @@ const navItems = [
     ),
   },
   {
-    label: "Applications",
+    label: "Uses",
     href: "#applications",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -35,6 +35,29 @@ const navItems = [
         <path d="M14 12h2" />
         <path d="M8 16h2" />
         <path d="M14 16h2" />
+      </svg>
+    ),
+  },
+  {
+    label: "Work",
+    href: "#projects",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="4" y="5" width="16" height="14" rx="3" />
+        <path d="M8 9h8" />
+        <path d="M8 13h5" />
+        <path d="M7 19l2-3" />
+        <path d="M17 19l-2-3" />
+      </svg>
+    ),
+  },
+  {
+    label: "Areas",
+    href: "#service-areas",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 21s7-4.7 7-11a7 7 0 0 0-14 0c0 6.3 7 11 7 11Z" />
+        <circle cx="12" cy="10" r="2.4" />
       </svg>
     ),
   },
@@ -61,12 +84,22 @@ const navItems = [
     ),
   },
   {
-    label: "Why Choose Us",
-    href: "#why-choose-us",
+    label: "Reviews",
+    href: "#testimonials",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 4l6 3v5c0 4.2-2.6 6.8-6 8-3.4-1.2-6-3.8-6-8V7l6-3Z" />
-        <path d="M9.5 12.5 11 14l3.5-4" />
+        <path d="M12 17.5 6.7 20l1-5.7-4.2-4.1 5.8-.8L12 4l2.7 5.4 5.8.8-4.2 4.1 1 5.7Z" />
+      </svg>
+    ),
+  },
+  {
+    label: "FAQ",
+    href: "#faq",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="8" />
+        <path d="M9.5 9a2.6 2.6 0 0 1 5 1c0 2-2.5 2-2.5 3.8" />
+        <path d="M12 17h.01" />
       </svg>
     ),
   },
@@ -106,8 +139,8 @@ export function Header() {
   }, [isMenuOpen]);
 
   const closeMenu = () => setIsMenuOpen(false);
-  const leftItems = navItems.slice(0, 3);
-  const rightItems = navItems.slice(3);
+  const leftItems = navItems.slice(0, 5);
+  const rightItems = navItems.slice(5);
   const ctaLabel = isScrolled || isMenuOpen ? "Requeste now" : "Send Request";
 
   return (
