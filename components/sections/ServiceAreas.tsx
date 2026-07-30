@@ -236,6 +236,10 @@ export function ServiceAreas() {
               })}
             </div>
           </Reveal>
+
+          <Reveal className="serviceAreas__ctaWrap serviceAreas__ctaWrap--visual" variant="fade-up" delay={180}>
+            <Button href="#contacto">Request Your Free On-Site Estimate</Button>
+          </Reveal>
         </div>
 
         <div className="serviceAreas__content stack-lg">
@@ -295,10 +299,6 @@ export function ServiceAreas() {
                 </blockquote>
               </div>
             </article>
-          </Reveal>
-
-          <Reveal className="serviceAreas__ctaWrap" variant="fade-up" delay={280}>
-            <Button href="#contacto">Request Your Free On-Site Estimate</Button>
           </Reveal>
         </div>
       </div>
