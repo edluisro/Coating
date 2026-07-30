@@ -68,18 +68,18 @@ const benefits = [
 const stackedImages = [
   {
     className: "whyRestore__card--1",
-    src: "https://res.cloudinary.com/wqsitnyu/image/upload/v1784941499/2149878749_sshdkh.jpg",
-    alt: "Professional consultation and project planning for metal restoration.",
+    src: "https://res.cloudinary.com/wqsitnyu/image/upload/c_fill,g_auto,w_900,h_1100,f_auto,q_auto/v1785380173/electrostatic_12_industrial_repair_metal_rovm7l.jpg",
+    alt: "Industrial metal repair and refinishing preparation for restoration.",
   },
   {
     className: "whyRestore__card--2",
-    src: "https://res.cloudinary.com/wqsitnyu/image/upload/v1784941445/2149878754_yywmzy.jpg",
-    alt: "Industrial refinishing work on commercial metal surfaces.",
+    src: "https://res.cloudinary.com/wqsitnyu/image/upload/c_fill,g_auto,w_900,h_1100,f_auto,q_auto/v1785380163/electrostatic_08_industrial_structure_painting_uiob88.jpg",
+    alt: "Industrial structure being professionally painted for long-term protection.",
   },
   {
     className: "whyRestore__card--3",
-    src: "https://res.cloudinary.com/wqsitnyu/image/upload/v1784941421/closeup-shot-worker-protective-gloves-painting-wooden-details_jsra0d.jpg",
-    alt: "Detailed professional coating application by hand.",
+    src: "https://res.cloudinary.com/wqsitnyu/image/upload/c_fill,g_auto,w_900,h_1100,f_auto,q_auto/v1785380162/electrostatic_04_spray_paint_metal_panels_k6jtzt.jpg",
+    alt: "Close-up spray application on prepared metal panels.",
   },
 ];
 

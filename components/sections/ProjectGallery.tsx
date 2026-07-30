@@ -18,9 +18,16 @@ type Project = {
 };
 
 const projectImages = {
-  consultation: "v1784941499/2149878749_sshdkh.jpg",
-  industrial: "v1784941445/2149878754_yywmzy.jpg",
-  closeup: "v1784941421/closeup-shot-worker-protective-gloves-painting-wooden-details_jsra0d.jpg",
+  industrialRepair: "v1785380173/electrostatic_12_industrial_repair_metal_rovm7l.jpg",
+  paintBoothBody: "v1785380170/electrostatic_10_car_body_paint_booth_maq7xk.jpg",
+  workerMetal: "v1785380168/electrostatic_11_worker_painting_metal_em77g2.jpg",
+  carFrame: "v1785380164/electrostatic_07_vintage_car_frame_paint_booth_fdexq8.jpg",
+  industrialStructure: "v1785380163/electrostatic_08_industrial_structure_painting_uiob88.jpg",
+  metalPanels: "v1785380162/electrostatic_04_spray_paint_metal_panels_k6jtzt.jpg",
+  industrialSpray: "v1785380127/electrostatic_05_industrial_metal_spray_a7sijq.jpg",
+  sprayCloud: "v1785380114/electrostatic_09_spray_paint_cloud_gvoukf.jpg",
+  carPartSpray: "v1785380135/electrostatic_13_car_part_spray_paint_ynhhdy.jpg",
+  coatedPipes: "v1785380131/electrostatic_03_powder_coating_pipes_rf0f8n.jpg",
 };
 
 const cloudinaryImage = (path: string, width: number, height: number) =>
@@ -32,16 +39,16 @@ const projects: Project[] = [
     description:
       "Complete refinishing of an oxidized aluminum fence for a commercial property in Miami-Dade County.",
     image: {
-      src: cloudinaryImage(projectImages.industrial, 1200, 900),
+      src: cloudinaryImage(projectImages.industrialSpray, 1200, 900),
       alt: "electrostatic painting metal fence before after",
     },
     gallery: [
       {
-        src: cloudinaryImage(projectImages.industrial, 1600, 1100),
+        src: cloudinaryImage(projectImages.industrialSpray, 1600, 1100),
         alt: "electrostatic painting aluminum fence restoration overall project view",
       },
       {
-        src: cloudinaryImage(projectImages.closeup, 1600, 1100),
+        src: cloudinaryImage(projectImages.sprayCloud, 1600, 1100),
         alt: "electrostatic painting aluminum fence finish close-up detail",
       },
     ],
@@ -51,16 +58,16 @@ const projects: Project[] = [
     description:
       "Electrostatic refinishing of interior and exterior steel railings with a smooth factory-quality finish.",
     image: {
-      src: cloudinaryImage(projectImages.closeup, 1200, 900),
+      src: cloudinaryImage(projectImages.workerMetal, 1200, 900),
       alt: "electrostatic painting office building railings factory quality finish",
     },
     gallery: [
       {
-        src: cloudinaryImage(projectImages.closeup, 1600, 1100),
+        src: cloudinaryImage(projectImages.workerMetal, 1600, 1100),
         alt: "electrostatic painting steel railing close-up finish",
       },
       {
-        src: cloudinaryImage(projectImages.industrial, 1600, 1100),
+        src: cloudinaryImage(projectImages.metalPanels, 1600, 1100),
         alt: "electrostatic painting office building railings overall view",
       },
     ],
@@ -70,16 +77,16 @@ const projects: Project[] = [
     description:
       "Restored aging storefront frames without replacing the original aluminum system.",
     image: {
-      src: cloudinaryImage(projectImages.consultation, 1200, 900),
+      src: cloudinaryImage(projectImages.metalPanels, 1200, 900),
       alt: "electrostatic painting storefront aluminum frame restoration",
     },
     gallery: [
       {
-        src: cloudinaryImage(projectImages.consultation, 1600, 1100),
+        src: cloudinaryImage(projectImages.metalPanels, 1600, 1100),
         alt: "electrostatic painting storefront restoration full project view",
       },
       {
-        src: cloudinaryImage(projectImages.closeup, 1600, 1100),
+        src: cloudinaryImage(projectImages.carFrame, 1600, 1100),
         alt: "electrostatic painting storefront frame finish detail",
       },
     ],
@@ -89,16 +96,16 @@ const projects: Project[] = [
     description:
       "Professional restoration of industrial equipment and protective metal housings while minimizing production downtime.",
     image: {
-      src: cloudinaryImage(projectImages.industrial, 1200, 900),
+      src: cloudinaryImage(projectImages.industrialRepair, 1200, 900),
       alt: "electrostatic painting industrial equipment refinishing",
     },
     gallery: [
       {
-        src: cloudinaryImage(projectImages.industrial, 1600, 1100),
+        src: cloudinaryImage(projectImages.industrialRepair, 1600, 1100),
         alt: "electrostatic painting industrial equipment refinishing overall view",
       },
       {
-        src: cloudinaryImage(projectImages.closeup, 1600, 1100),
+        src: cloudinaryImage(projectImages.coatedPipes, 1600, 1100),
         alt: "electrostatic painting protective metal housing finish detail",
       },
     ],
@@ -108,16 +115,16 @@ const projects: Project[] = [
     description:
       "Refinished damaged hollow metal doors and frames, improving appearance without costly replacement.",
     image: {
-      src: cloudinaryImage(projectImages.closeup, 1200, 900),
+      src: cloudinaryImage(projectImages.paintBoothBody, 1200, 900),
       alt: "electrostatic painting commercial metal doors and frames",
     },
     gallery: [
       {
-        src: cloudinaryImage(projectImages.closeup, 1600, 1100),
+        src: cloudinaryImage(projectImages.paintBoothBody, 1600, 1100),
         alt: "electrostatic painting hollow metal door refinishing close-up",
       },
       {
-        src: cloudinaryImage(projectImages.consultation, 1600, 1100),
+        src: cloudinaryImage(projectImages.carPartSpray, 1600, 1100),
         alt: "electrostatic painting metal door frame finish detail",
       },
     ],
@@ -127,16 +134,16 @@ const projects: Project[] = [
     description:
       "Restoration of bollards, guard rails and warehouse safety barriers using electrostatic application.",
     image: {
-      src: cloudinaryImage(projectImages.industrial, 1200, 900),
+      src: cloudinaryImage(projectImages.industrialStructure, 1200, 900),
       alt: "electrostatic painting warehouse safety barriers and guard rails",
     },
     gallery: [
       {
-        src: cloudinaryImage(projectImages.industrial, 1600, 1100),
+        src: cloudinaryImage(projectImages.industrialStructure, 1600, 1100),
         alt: "electrostatic painting warehouse safety barriers full view",
       },
       {
-        src: cloudinaryImage(projectImages.closeup, 1600, 1100),
+        src: cloudinaryImage(projectImages.carFrame, 1600, 1100),
         alt: "electrostatic painting warehouse guard rail application detail",
       },
     ],

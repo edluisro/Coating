@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -206,19 +207,13 @@ export function WhatIsElectrostatic() {
         <Reveal className="whatIsElectrostatic__visualWrap" variant="slide-right" delay={120} aria-hidden="true">
           <div className="whatIsElectrostatic__visualCard">
             <div className="whatIsElectrostatic__videoShell">
-              <video
+              <Image
                 className="whatIsElectrostatic__video"
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="metadata"
-              >
-                <source
-                  src="https://res.cloudinary.com/wqsitnyu/video/upload/v1784926827/4771124_Painter_Spraying_1280x720_h4yfkj.mp4"
-                  type="video/mp4"
-                />
-              </video>
+                src="https://res.cloudinary.com/wqsitnyu/image/upload/c_fill,g_auto,w_1200,h_1400,f_auto,q_auto/v1785380168/electrostatic_11_worker_painting_metal_em77g2.jpg"
+                alt="Technician using electrostatic spray equipment on a metal surface."
+                fill
+                sizes="(max-width: 1023px) 100vw, 42vw"
+              />
             </div>
 
             <div className="whatIsElectrostatic__fieldLines">
