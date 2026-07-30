@@ -24,7 +24,7 @@ export function HeroLead() {
           preload="metadata"
         >
           <source
-            src="https://res.cloudinary.com/wqsitnyu/video/upload/v1784926827/4771124_Painter_Spraying_1280x720_h4yfkj.mp4"
+            src="https://res.cloudinary.com/wqsitnyu/video/upload/v1785382156/electrostatic_painting_industrial_spray_hd_pexels_wndrgm.mp4"
             type="video/mp4"
           />
         </video>
