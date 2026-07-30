@@ -1,5 +1,6 @@
 import { Footer } from "@/components/layout/Footer";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
+import { FinalCta } from "@/components/sections/FinalCta";
 import { Header } from "@/components/layout/Header";
 import { ApplicationsGrid } from "@/components/sections/ApplicationsGrid";
 import { HeroLead } from "@/components/sections/HeroLead";
@@ -26,6 +27,7 @@ export default function Home() {
         <ProcessTimeline />
         <TestimonialsSection />
         <FAQAccordion />
+        <FinalCta />
       </main>
       <Footer />
     </>
