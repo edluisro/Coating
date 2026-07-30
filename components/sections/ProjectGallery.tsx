@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { Button } from "@/components/ui/Button";
 import { Lightbox } from "@/components/ui/Lightbox";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -247,9 +246,6 @@ export function ProjectGallery() {
           </div>
         </Reveal>
 
-        <Reveal className="projectGallery__ctaWrap" variant="fade-up" delay={240}>
-          <Button href="#contacto">View More Projects</Button>
-        </Reveal>
       </div>
 
       {selectedProject ? (

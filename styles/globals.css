@@ -2776,11 +2776,6 @@ p {
   color: rgba(255, 255, 255, 0.82);
 }
 
-.projectGallery__ctaWrap {
-  display: flex;
-  justify-content: center;
-}
-
 .lightbox {
   position: fixed;
   inset: 0;
@@ -4169,11 +4164,6 @@ p {
     display: grid;
     gap: 8px;
     font-size: 2rem;
-  }
-
-  .projectGallery__ctaWrap .btn {
-    width: 100%;
-    justify-content: center;
   }
 
   .lightbox {
