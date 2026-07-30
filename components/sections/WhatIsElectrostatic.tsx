@@ -11,22 +11,22 @@ const benefits = [
 ];
 
 const surfaces = [
-  "Aluminum Fences",
-  "Steel Fences",
-  "Railings",
-  "Storefront Frames",
-  "Hollow Metal Doors",
-  "Window Frames",
-  "Security Gates",
-  "Staircases",
-  "Elevator Doors",
-  "Metal Partitions",
-  "Industrial Equipment",
-  "Structural Steel",
-  "Metal Furniture",
-  "Warehouse Racking",
-  "Loading Dock Equipment",
-  "Decorative Metal Features",
+  { name: "Aluminum Fences", type: "Exterior metal" },
+  { name: "Steel Fences", type: "Exterior metal" },
+  { name: "Railings", type: "Safety systems" },
+  { name: "Storefront Frames", type: "Commercial fronts" },
+  { name: "Hollow Metal Doors", type: "Access points" },
+  { name: "Window Frames", type: "Architectural metal" },
+  { name: "Security Gates", type: "Access control" },
+  { name: "Staircases", type: "High-traffic metal" },
+  { name: "Elevator Doors", type: "Interior finishes" },
+  { name: "Metal Partitions", type: "Facility assets" },
+  { name: "Industrial Equipment", type: "Industrial assets" },
+  { name: "Structural Steel", type: "Heavy-duty metal" },
+  { name: "Metal Furniture", type: "Commercial fixtures" },
+  { name: "Warehouse Racking", type: "Warehouse systems" },
+  { name: "Loading Dock Equipment", type: "Operational assets" },
+  { name: "Decorative Metal Features", type: "Premium details" },
 ];
 
 const benefitIcons = [
@@ -55,6 +55,34 @@ const benefitIcons = [
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
     <path d="M12 4l6 3v5c0 4.2-2.6 6.8-6 8-3.4-1.2-6-3.8-6-8V7l6-3Z" />
     <path d="M9.5 12.5 11 14l3.5-4" />
+  </svg>,
+];
+
+const surfaceIcons = [
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M5 19V7" />
+    <path d="M19 19V7" />
+    <path d="M4 10h16" />
+    <path d="M4 15h16" />
+    <path d="M8 7v12" />
+    <path d="M16 7v12" />
+  </svg>,
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M5 20V6h14v14" />
+    <path d="M8 10h8" />
+    <path d="M8 14h8" />
+    <path d="M12 6v14" />
+  </svg>,
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M6 20V5h12v15" />
+    <path d="M9 9h.01" />
+    <path d="M15 12h.01" />
+    <path d="M9 16h6" />
+  </svg>,
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4 18h16" />
+    <path d="M6 18V8l6-3 6 3v10" />
+    <path d="M9 12h6" />
   </svg>,
 ];
 
@@ -124,9 +152,18 @@ export function WhatIsElectrostatic() {
               <h3 className="whatIsElectrostatic__subheading">Common Metal Surfaces That Can Be Restored</h3>
               <Reveal variant="fade-in" delay={30}>
                 <ul className="whatIsElectrostatic__surfaces" aria-label="Common metal surfaces that can be restored">
-                  {surfaces.map((surface) => (
-                    <li className="whatIsElectrostatic__surfaceItem" key={surface}>
-                      {surface}
+                  {surfaces.map((surface, index) => (
+                    <li className="whatIsElectrostatic__surfaceItem" key={surface.name}>
+                      <span className="whatIsElectrostatic__surfaceIcon" aria-hidden="true">
+                        {surfaceIcons[index % surfaceIcons.length]}
+                      </span>
+                      <span className="whatIsElectrostatic__surfaceCopy">
+                        <span className="whatIsElectrostatic__surfaceName">{surface.name}</span>
+                        <span className="whatIsElectrostatic__surfaceType">{surface.type}</span>
+                      </span>
+                      <span className="whatIsElectrostatic__surfaceIndex" aria-hidden="true">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
                     </li>
                   ))}
                 </ul>
