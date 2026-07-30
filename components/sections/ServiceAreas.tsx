@@ -169,30 +169,6 @@ function SouthFloridaMap() {
           <path d="M70 444H448" stroke="rgba(13, 71, 161, 0.12)" strokeWidth="1.2" />
         </g>
 
-        <g className="serviceAreas__markerGroup serviceAreas__markerGroup--miami">
-          <path d="M325 440C325 454 304 478 298 486C292 478 271 454 271 440C271 425 283 413 298 413C313 413 325 425 325 440Z" fill="#f47b20" />
-          <circle cx="298" cy="440" r="8" fill="#fff7f0" />
-          <text x="334" y="444" className="serviceAreas__markerLabel">
-            Miami
-          </text>
-        </g>
-
-        <g className="serviceAreas__markerGroup serviceAreas__markerGroup--fort">
-          <path d="M347 328C347 342 326 366 320 374C314 366 293 342 293 328C293 313 305 301 320 301C335 301 347 313 347 328Z" fill="#f47b20" />
-          <circle cx="320" cy="328" r="8" fill="#fff7f0" />
-          <text x="356" y="332" className="serviceAreas__markerLabel">
-            Fort Lauderdale
-          </text>
-        </g>
-
-        <g className="serviceAreas__markerGroup serviceAreas__markerGroup--west">
-          <path d="M371 214C371 228 350 252 344 260C338 252 317 228 317 214C317 199 329 187 344 187C359 187 371 199 371 214Z" fill="#f47b20" />
-          <circle cx="344" cy="214" r="8" fill="#fff7f0" />
-          <text x="380" y="218" className="serviceAreas__markerLabel">
-            West Palm Beach
-          </text>
-        </g>
-
         <g
           className="serviceAreas__selectedMarker"
           data-service-area-marker
