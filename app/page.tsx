@@ -2,6 +2,7 @@ import { Footer } from "@/components/layout/Footer";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { Header } from "@/components/layout/Header";
+import { LeadPopup } from "@/components/ui/LeadPopup";
 import { ApplicationsGrid } from "@/components/sections/ApplicationsGrid";
 import { HeroLead } from "@/components/sections/HeroLead";
 import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
@@ -29,6 +30,7 @@ export default function Home() {
         <FAQAccordion />
         <FinalCta />
       </main>
+      <LeadPopup />
       <Footer />
     </>
   );

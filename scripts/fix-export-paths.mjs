@@ -155,6 +155,89 @@ const behaviorScript = String.raw`<script>
   window.addEventListener("scroll", syncHeader, { passive: true });
   syncHeader();
 
+  const leadPopup = document.querySelector(".leadPopup");
+  const leadPopupDialog = document.querySelector(".leadPopup__dialog");
+  const leadPopupCloseButtons = document.querySelectorAll("[data-lead-popup-close]");
+  let previousLeadPopupOverflow = "";
+  let previousLeadPopupFocus = null;
+
+  const openLeadPopup = (trigger) => {
+    if (!(leadPopup instanceof HTMLElement)) {
+      return;
+    }
+
+    previousLeadPopupFocus = trigger instanceof HTMLElement ? trigger : document.activeElement;
+    previousLeadPopupOverflow = document.body.style.overflow;
+    leadPopup.hidden = false;
+    document.body.style.overflow = "hidden";
+    window.requestAnimationFrame(() => {
+      leadPopup.classList.add("is-open");
+      const firstInput = leadPopup.querySelector(".leadPopup__form input, .leadPopup__form select, .leadPopup__form textarea");
+      if (firstInput instanceof HTMLElement) {
+        firstInput.focus();
+      }
+    });
+  };
+
+  const closeLeadPopup = () => {
+    if (!(leadPopup instanceof HTMLElement)) {
+      return;
+    }
+
+    leadPopup.classList.remove("is-open");
+    document.body.style.overflow = previousLeadPopupOverflow;
+    window.setTimeout(() => {
+      if (!leadPopup.classList.contains("is-open")) {
+        leadPopup.hidden = true;
+      }
+    }, 280);
+
+    if (previousLeadPopupFocus instanceof HTMLElement) {
+      previousLeadPopupFocus.focus();
+    }
+  };
+
+  const popupTriggers = document.querySelectorAll(
+    'a.btn:not([href^="tel:"]):not([href^="mailto:"]), a.services__serviceLink[href="#contacto"], button.btn:not([type="submit"])'
+  );
+
+  popupTriggers.forEach((trigger) => {
+    trigger.setAttribute("data-lead-popup-trigger", "true");
+    trigger.addEventListener("click", (event) => {
+      event.preventDefault();
+      openLeadPopup(trigger);
+    });
+  });
+
+  leadPopupCloseButtons.forEach((button) => {
+    button.addEventListener("click", closeLeadPopup);
+  });
+
+  if (leadPopupDialog instanceof HTMLElement) {
+    leadPopupDialog.addEventListener("click", (event) => event.stopPropagation());
+  }
+
+  leadPopup?.querySelector("form")?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    if (!(form instanceof HTMLElement)) {
+      return;
+    }
+
+    form.classList.add("is-submitted");
+    const submitButton = form.querySelector(".leadPopup__submit");
+    if (submitButton instanceof HTMLButtonElement) {
+      submitButton.textContent = "Request Sent";
+      submitButton.disabled = true;
+    }
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeLeadPopup();
+    }
+  });
+
   const faqItems = Array.from(document.querySelectorAll("[data-faq-item]"));
 
   const syncFaqPanel = (item, open) => {
