@@ -96,7 +96,9 @@ $remoteHost = 'tempserver@vps60725.dreamhostps.com'
 $remoteBaseDir = '~/tempserver.fastansweragency.com/landing-next'
 $remoteReleaseDir = "~/tempserver.fastansweragency.com/landing-next.__new.$releaseStamp"
 $remoteBackupDir = '~/tempserver.fastansweragency.com/landing-next.__old'
+$remoteArchive = "~/tempserver.fastansweragency.com/landing-next.__new.$releaseStamp.tar.gz"
 $publicUrl = 'https://tempserver.fastansweragency.com/landing-next'
+$localArchive = Join-Path (Join-Path $projectRoot '.tmp') 'landing-next-export.tar.gz'
 
 $askpassExe = Ensure-AskPassExe
 $envBackup = @{
@@ -107,6 +109,16 @@ $envBackup = @{
 }
 
 try {
+    if (Test-Path $localArchive) {
+        Remove-Item -LiteralPath $localArchive -Force
+    }
+
+    Write-Host 'Empaquetando export estatico...'
+    & tar.exe -czf $localArchive -C $exportDir .
+    if ($LASTEXITCODE -ne 0) {
+        throw 'No pude empaquetar el export estatico.'
+    }
+
     $env:SSH_ASKPASS = $askpassExe
     $env:SSH_ASKPASS_REQUIRE = 'force'
     $env:DISPLAY = '1'
@@ -118,24 +130,19 @@ try {
     }
 
     Write-Host 'Preparando release temporal...'
-    & ssh.exe -o StrictHostKeyChecking=accept-new -o PreferredAuthentications=password -o PubkeyAuthentication=no $remoteHost "rm -rf $remoteBackupDir && mkdir -p $remoteReleaseDir"
+    & ssh.exe -o StrictHostKeyChecking=accept-new -o PreferredAuthentications=password -o PubkeyAuthentication=no $remoteHost "rm -rf $remoteBackupDir $remoteReleaseDir $remoteArchive && mkdir -p $remoteReleaseDir"
     if ($LASTEXITCODE -ne 0) {
         throw 'No pude preparar la carpeta temporal del deploy.'
     }
 
     Write-Host 'Subiendo export estatico a DreamHost...'
-    & ssh.exe -o StrictHostKeyChecking=accept-new -o PreferredAuthentications=password -o PubkeyAuthentication=no $remoteHost "mkdir -p $remoteReleaseDir/out"
-    if ($LASTEXITCODE -ne 0) {
-        throw 'No pude preparar la carpeta out del release remoto.'
-    }
-
-    & scp.exe -r -o StrictHostKeyChecking=accept-new -o PreferredAuthentications=password -o PubkeyAuthentication=no "$exportDir\\*" "${remoteHost}:$remoteReleaseDir/out/"
+    & scp.exe -o StrictHostKeyChecking=accept-new -o PreferredAuthentications=password -o PubkeyAuthentication=no $localArchive "${remoteHost}:$remoteArchive"
     if ($LASTEXITCODE -ne 0) {
         throw 'No pude subir el contenido exportado a DreamHost.'
     }
 
     Write-Host 'Activando nueva version del sitio...'
-    & ssh.exe -o StrictHostKeyChecking=accept-new -o PreferredAuthentications=password -o PubkeyAuthentication=no $remoteHost "chmod -R u+rwX $remoteReleaseDir && shopt -s dotglob nullglob && mv $remoteReleaseDir/out/* $remoteReleaseDir/ && rmdir $remoteReleaseDir/out && find $remoteReleaseDir -type d -exec chmod 755 {} + && find $remoteReleaseDir -type f -exec chmod 644 {} + && if [ -d $remoteBaseDir ]; then mv $remoteBaseDir $remoteBackupDir; fi && mv $remoteReleaseDir $remoteBaseDir && if [ -d $remoteBackupDir ]; then chmod -R u+rwX $remoteBackupDir; rm -rf $remoteBackupDir; fi"
+    & ssh.exe -o StrictHostKeyChecking=accept-new -o PreferredAuthentications=password -o PubkeyAuthentication=no $remoteHost "tar -xzf $remoteArchive -C $remoteReleaseDir && rm -f $remoteArchive && chmod -R u+rwX $remoteReleaseDir && find $remoteReleaseDir -type d -exec chmod 755 {} + && find $remoteReleaseDir -type f -exec chmod 644 {} + && if [ -d $remoteBaseDir ]; then mv $remoteBaseDir $remoteBackupDir; fi && mv $remoteReleaseDir $remoteBaseDir && if [ -d $remoteBackupDir ]; then chmod -R u+rwX $remoteBackupDir; rm -rf $remoteBackupDir; fi"
     if ($LASTEXITCODE -ne 0) {
         throw 'No pude publicar el sitio en DreamHost.'
     }
