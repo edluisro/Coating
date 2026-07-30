@@ -5167,13 +5167,17 @@ p {
     padding: 22px 20px;
   }
 
-  .applications__industryTabList,
   .applications__industryList {
     grid-template-columns: 1fr;
   }
 
+  .applications__industryTabList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .applications__industryTab {
     min-height: 64px;
+    text-align: center;
   }
 
   .applications__ctaWrap .btn {
