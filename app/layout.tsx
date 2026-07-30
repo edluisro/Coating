@@ -11,7 +11,7 @@ const poppins = Poppins({
   display: "swap",
 });
 
-const siteUrl = "https://tempserver.fastansweragency.com/landing-next";
+const siteUrl = "https://tempserver.fastansweragency.com/electro";
 const siteTitle = "Florida ElectroStatic";
 const siteDescription =
   "Professional on-site electrostatic painting services for commercial and industrial metal restoration across South Florida.";

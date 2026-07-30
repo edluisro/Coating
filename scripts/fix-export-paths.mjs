@@ -3,11 +3,11 @@ import path from "node:path";
 
 const exportDir = path.resolve(".next-build");
 const nextPathPattern = /(["'])\/_next\//g;
-const nextPathReplacement = "$1/landing-next/_next/";
+const nextPathReplacement = "$1/electro/_next/";
 const stylesheetPattern = /<link rel="stylesheet" href="([^"]+\.css)" data-precedence="next"\/>/g;
-const nextScriptPattern = /<script[^>]+src="\/landing-next\/_next\/[^"]+"[^>]*><\/script>/g;
-const nextStylesheetLinkPattern = /<link rel="stylesheet" href="\/landing-next\/_next\/[^"]+"[^>]*>/g;
-const nextPreloadPattern = /<link rel="preload"[^>]+href="\/landing-next\/_next\/[^"]+"[^>]*>/g;
+const nextScriptPattern = /<script[^>]+src="\/electro\/_next\/[^"]+"[^>]*><\/script>/g;
+const nextStylesheetLinkPattern = /<link rel="stylesheet" href="\/electro\/_next\/[^"]+"[^>]*>/g;
+const nextPreloadPattern = /<link rel="preload"[^>]+href="\/electro\/_next\/[^"]+"[^>]*>/g;
 const behaviorScript = String.raw`<script>
 (() => {
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -601,7 +601,7 @@ async function listFiles(dir) {
 }
 
 function resolveCssPath(href) {
-  const relativeHref = href.replace(/^\/landing-next\//, "");
+  const relativeHref = href.replace(/^\/electro\//, "");
   return path.join(exportDir, relativeHref);
 }
 
@@ -613,7 +613,7 @@ async function inlineStylesheets(file, original) {
     const [fullTag, href] = match;
     const cssPath = resolveCssPath(href);
     let css = await readFile(cssPath, "utf8");
-    css = css.replace(/url\(\.\.\/media\//g, "url(/landing-next/_next/static/media/");
+    css = css.replace(/url\(\.\.\/media\//g, "url(/electro/_next/static/media/");
     css = await inlineFontFiles(css, cssPath);
     const inlineTag = `<style data-inline-css="${path.basename(cssPath)}">${css}</style>`;
     updated = updated.replace(fullTag, inlineTag);
@@ -623,7 +623,7 @@ async function inlineStylesheets(file, original) {
 }
 
 async function inlineFontFiles(css, cssPath) {
-  const fontUrlPattern = /url\((['"]?)(\/landing-next\/_next\/static\/media\/[^)'"]+\.woff2)\1\)/g;
+  const fontUrlPattern = /url\((['"]?)(\/electro\/_next\/static\/media\/[^)'"]+\.woff2)\1\)/g;
   const replacements = [...css.matchAll(fontUrlPattern)];
 
   if (replacements.length === 0) {
@@ -634,7 +634,7 @@ async function inlineFontFiles(css, cssPath) {
 
   for (const match of replacements) {
     const [fullMatch, , assetPath] = match;
-    const relativeAssetPath = assetPath.replace(/^\/landing-next\//, "");
+    const relativeAssetPath = assetPath.replace(/^\/electro\//, "");
     const fontPath = path.join(exportDir, relativeAssetPath);
     const fontBuffer = await readFile(fontPath);
     const dataUrl = `url(data:font/woff2;base64,${fontBuffer.toString("base64")})`;

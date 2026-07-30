@@ -93,12 +93,12 @@ if (-not $sshPass) {
 }
 
 $remoteHost = 'tempserver@vps60725.dreamhostps.com'
-$remoteBaseDir = '~/tempserver.fastansweragency.com/landing-next'
-$remoteReleaseDir = "~/tempserver.fastansweragency.com/landing-next.__new.$releaseStamp"
-$remoteBackupDir = '~/tempserver.fastansweragency.com/landing-next.__old'
-$remoteArchive = "~/tempserver.fastansweragency.com/landing-next.__new.$releaseStamp.tar.gz"
-$publicUrl = 'https://tempserver.fastansweragency.com/landing-next'
-$localArchive = Join-Path (Join-Path $projectRoot '.tmp') 'landing-next-export.tar.gz'
+$remoteBaseDir = '~/tempserver.fastansweragency.com/electro'
+$remoteReleaseDir = "~/tempserver.fastansweragency.com/electro.__new.$releaseStamp"
+$remoteBackupDir = '~/tempserver.fastansweragency.com/electro.__old'
+$remoteArchive = "~/tempserver.fastansweragency.com/electro.__new.$releaseStamp.tar.gz"
+$publicUrl = 'https://tempserver.fastansweragency.com/electro'
+$localArchive = Join-Path (Join-Path $projectRoot '.tmp') 'electro-export.tar.gz'
 
 $askpassExe = Ensure-AskPassExe
 $envBackup = @{

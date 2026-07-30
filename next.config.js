@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  assetPrefix: "/landing-next",
-  basePath: "/landing-next",
+  assetPrefix: "/electro",
+  basePath: "/electro",
   distDir: ".next-build",
   images: {
     unoptimized: true,
