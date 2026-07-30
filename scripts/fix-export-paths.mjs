@@ -202,6 +202,86 @@ const behaviorScript = String.raw`<script>
     select.addEventListener("change", () => updateServiceAreaMap(select));
   });
 
+  document.querySelectorAll("[data-testimonials-carousel]").forEach((carousel) => {
+    const track = carousel.querySelector("[data-testimonials-track]");
+    const prevButton = carousel.querySelector("[data-testimonials-prev]");
+    const nextButton = carousel.querySelector("[data-testimonials-next]");
+    const dots = Array.from(carousel.querySelectorAll("[data-testimonials-dot]"));
+
+    if (!(track instanceof HTMLElement)) return;
+
+    const slides = Array.from(track.querySelectorAll(".testimonials__slide"));
+
+    const getStep = () => {
+      const firstSlide = slides[0];
+      if (!(firstSlide instanceof HTMLElement)) return track.clientWidth;
+
+      const styles = window.getComputedStyle(track);
+      const gap = Number.parseFloat(styles.columnGap || styles.gap || "0") || 0;
+      return firstSlide.getBoundingClientRect().width + gap;
+    };
+
+    const getActiveIndex = () => {
+      const step = getStep();
+      if (!step) return 0;
+      return Math.max(0, Math.min(slides.length - 1, Math.round(track.scrollLeft / step)));
+    };
+
+    const syncCarousel = () => {
+      const activeIndex = getActiveIndex();
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("is-active", index === activeIndex);
+        dot.setAttribute("aria-current", index === activeIndex ? "true" : "false");
+      });
+
+      if (prevButton instanceof HTMLButtonElement) {
+        prevButton.disabled = track.scrollLeft <= 4;
+      }
+
+      if (nextButton instanceof HTMLButtonElement) {
+        nextButton.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+      }
+    };
+
+    const scrollToIndex = (index) => {
+      track.scrollTo({
+        left: getStep() * Math.max(0, Math.min(slides.length - 1, index)),
+        behavior: "smooth",
+      });
+    };
+
+    if (prevButton instanceof HTMLButtonElement) {
+      prevButton.addEventListener("click", () => scrollToIndex(getActiveIndex() - 1));
+    }
+
+    if (nextButton instanceof HTMLButtonElement) {
+      nextButton.addEventListener("click", () => scrollToIndex(getActiveIndex() + 1));
+    }
+
+    dots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        const index = Number.parseInt(dot.getAttribute("data-index") || "0", 10);
+        scrollToIndex(index);
+      });
+    });
+
+    track.addEventListener("scroll", () => window.requestAnimationFrame(syncCarousel), { passive: true });
+    track.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        scrollToIndex(getActiveIndex() - 1);
+      }
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        scrollToIndex(getActiveIndex() + 1);
+      }
+    });
+
+    window.addEventListener("resize", syncCarousel);
+    syncCarousel();
+  });
+
   const leadPopup = document.querySelector(".leadPopup");
   const leadPopupDialog = document.querySelector(".leadPopup__dialog");
   const leadPopupCloseButtons = document.querySelectorAll("[data-lead-popup-close]");

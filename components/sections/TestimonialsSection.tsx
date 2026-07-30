@@ -108,10 +108,42 @@ export function TestimonialsSection() {
           </header>
         </Reveal>
 
-        <Reveal className="testimonials__grid" variant="fade-up" stagger={90}>
-          {testimonials.map((testimonial) => (
-            <TestimonialCard key={`${testimonial.role}-${testimonial.city}`} testimonial={testimonial} />
-          ))}
+        <Reveal className="testimonials__carousel" variant="fade-up">
+          <div className="testimonials__carouselShell" data-testimonials-carousel>
+            <div
+              className="testimonials__track"
+              data-testimonials-track
+              aria-label="Client testimonials carousel"
+              tabIndex={0}
+            >
+              {testimonials.map((testimonial) => (
+                <div className="testimonials__slide" key={`${testimonial.role}-${testimonial.city}`}>
+                  <TestimonialCard testimonial={testimonial} />
+                </div>
+              ))}
+            </div>
+
+            <div className="testimonials__controls" aria-label="Testimonials controls">
+              <button className="testimonials__arrow" type="button" aria-label="Previous testimonial" data-testimonials-prev>
+                ←
+              </button>
+              <div className="testimonials__dots" aria-label="Choose testimonial">
+                {testimonials.map((testimonial, index) => (
+                  <button
+                    className="testimonials__dot"
+                    type="button"
+                    aria-label={`Show testimonial ${index + 1} from ${testimonial.city}`}
+                    data-testimonials-dot
+                    data-index={index}
+                    key={`${testimonial.city}-dot`}
+                  />
+                ))}
+              </div>
+              <button className="testimonials__arrow" type="button" aria-label="Next testimonial" data-testimonials-next>
+                →
+              </button>
+            </div>
+          </div>
         </Reveal>
 
         <div className="testimonials__proof">
@@ -143,9 +175,7 @@ export function TestimonialsSection() {
           <Reveal className="testimonials__quoteWrap" variant="fade-up" delay={180}>
             <blockquote className="testimonials__quote">
               <p>Our goal isn’t simply to complete another project.</p>
-              <p>
-                It’s to become the company you call every time your metal assets need professional restoration.
-              </p>
+              <p>It’s to become the company you call every time your metal assets need professional restoration.</p>
             </blockquote>
           </Reveal>
 
