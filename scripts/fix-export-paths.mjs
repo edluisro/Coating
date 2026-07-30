@@ -108,12 +108,17 @@ const behaviorScript = String.raw`<script>
   const menuToggle = document.querySelector(".menuToggle");
   const mobileDrawer = document.querySelector(".mobileDrawer");
   const logoImage = document.querySelector(".brandOrb__image");
+  const navCtaButtons = document.querySelectorAll(".navCta .btn, .mobileDrawer__panel .btn");
 
   const syncHeader = () => {
     if (!header) return;
     const menuOpen = mobileDrawer?.classList.contains("is-open");
     const isSticky = window.scrollY > 16 || !!menuOpen;
     header.classList.toggle("is-sticky", isSticky);
+
+    navCtaButtons.forEach((button) => {
+      button.textContent = isSticky ? "Request Now" : "Send Request";
+    });
 
     if (logoImage instanceof HTMLImageElement) {
       const defaultLogo = logoImage.getAttribute("data-logo-default");

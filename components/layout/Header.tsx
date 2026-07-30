@@ -141,7 +141,7 @@ export function Header() {
   const closeMenu = () => setIsMenuOpen(false);
   const leftItems = navItems.slice(0, 5);
   const rightItems = navItems.slice(5);
-  const ctaLabel = isScrolled || isMenuOpen ? "Requeste now" : "Send Request";
+  const ctaLabel = isScrolled || isMenuOpen ? "Request Now" : "Send Request";
 
   return (
     <header className={`siteHeader ${isScrolled || isMenuOpen ? "is-sticky" : ""}`}>
