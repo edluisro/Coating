@@ -1942,7 +1942,7 @@ p {
   max-width: 65ch;
 }
 
-.applications__industriesNote {
+.applications__industries .applications__industriesNote {
   width: 100%;
   max-width: none;
 }
