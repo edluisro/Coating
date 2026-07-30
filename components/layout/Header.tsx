@@ -109,7 +109,7 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuId = useId();
-  const logoSrc = "https://res.cloudinary.com/wqsitnyu/image/upload/v1785031515/ChatGPT_Image_25_jul_2026_10_04_58_p.m._rrjio0.png";
+  const logoSrc = "https://res.cloudinary.com/wqsitnyu/image/upload/v1785382413/ChatGPT_Image_29_jul_2026_11_32_58_p.m._el0teq.png";
 
   useEffect(() => {
     const updateHeaderState = () => setIsScrolled(window.scrollY > 16);
@@ -169,8 +169,8 @@ export function Header() {
                 fill
                 sizes="70px"
                 className="brandOrb__image"
-                data-logo-default="https://res.cloudinary.com/wqsitnyu/image/upload/v1785031515/ChatGPT_Image_25_jul_2026_10_04_58_p.m._rrjio0.png"
-                data-logo-scrolled="https://res.cloudinary.com/wqsitnyu/image/upload/v1785031515/ChatGPT_Image_25_jul_2026_10_04_58_p.m._rrjio0.png"
+                data-logo-default="https://res.cloudinary.com/wqsitnyu/image/upload/v1785382413/ChatGPT_Image_29_jul_2026_11_32_58_p.m._el0teq.png"
+                data-logo-scrolled="https://res.cloudinary.com/wqsitnyu/image/upload/v1785382413/ChatGPT_Image_29_jul_2026_11_32_58_p.m._el0teq.png"
                 priority
               />
             </span>
