@@ -167,7 +167,7 @@ export function Header() {
                 src={logoSrc}
                 alt="Florida ElectroStatic logo"
                 fill
-                sizes="70px"
+                sizes="95px"
                 className="brandOrb__image"
                 data-logo-default="https://res.cloudinary.com/wqsitnyu/image/upload/v1785449990/ChatGPT_Image_30_jul_2026__06_12_13_p.m.-removebg-preview_t2r0pe.png"
                 data-logo-scrolled="https://res.cloudinary.com/wqsitnyu/image/upload/v1785449990/ChatGPT_Image_30_jul_2026__06_12_13_p.m.-removebg-preview_t2r0pe.png"
