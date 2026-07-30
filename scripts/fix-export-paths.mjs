@@ -525,6 +525,49 @@ const behaviorScript = String.raw`<script>
     });
   });
 
+  document.querySelectorAll("[data-industry-tabs]").forEach((tabsRoot) => {
+    const tabs = Array.from(tabsRoot.querySelectorAll("[data-industry-tab]"));
+    const panels = Array.from(tabsRoot.querySelectorAll("[data-industry-panel]"));
+
+    const activateIndustryTab = (nextId) => {
+      tabs.forEach((tab) => {
+        const isActive = tab.getAttribute("data-industry-tab") === nextId;
+        tab.classList.toggle("is-active", isActive);
+        tab.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
+
+      panels.forEach((panel) => {
+        const isActive = panel.getAttribute("data-industry-panel") === nextId;
+        panel.classList.toggle("is-active", isActive);
+        panel.hidden = !isActive;
+      });
+    };
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => {
+        const nextId = tab.getAttribute("data-industry-tab");
+        if (nextId) {
+          activateIndustryTab(nextId);
+        }
+      });
+
+      tab.addEventListener("keydown", (event) => {
+        if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") {
+          return;
+        }
+
+        event.preventDefault();
+        const direction = event.key === "ArrowRight" ? 1 : -1;
+        const nextTab = tabs[(index + direction + tabs.length) % tabs.length];
+        const nextId = nextTab?.getAttribute("data-industry-tab");
+        if (nextId) {
+          nextTab.focus();
+          activateIndustryTab(nextId);
+        }
+      });
+    });
+  });
+
   window.addEventListener("keydown", (event) => {
     if (!activeGallery) {
       return;
