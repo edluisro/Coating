@@ -46,7 +46,7 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-const testimonialDots = testimonials.slice(0, 3);
+const testimonialDots = testimonials;
 
 const trustPoints = [
   "Professional Communication",
