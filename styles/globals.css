@@ -5285,7 +5285,7 @@ p {
   }
 
   .processTimeline__face--content {
-    padding: 24px 22px 22px;
+    padding: 24px 22px 128px;
   }
 
   .processTimeline__face--cover {
@@ -5473,7 +5473,7 @@ p {
   }
 
   .processTimeline__face--content {
-    padding: 132px 18px 22px;
+    padding: 24px 18px 154px;
   }
 
   .processTimeline__face--cover {
