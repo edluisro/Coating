@@ -109,13 +109,13 @@ const projects: Project[] = [
     description:
       "Professional restoration of industrial equipment and protective metal housings while minimizing production downtime.",
     image: {
-      src: cloudinaryImage(projectImages.commercialDoors, 1200, 900),
-      alt: "electrostatic painting industrial equipment refinishing",
+      src: cloudinaryImage(projectImages.liftStorefront, 1200, 900),
+      alt: "electrostatic painting industrial and commercial metal systems with lift access",
     },
     gallery: [
       {
-        src: cloudinaryImage(projectImages.commercialDoors, 1600, 1100),
-        alt: "electrostatic painting industrial equipment refinishing overall view",
+        src: cloudinaryImage(projectImages.liftStorefront, 1600, 1100),
+        alt: "electrostatic painting industrial equipment and exterior metal systems overall view",
       },
       {
         src: cloudinaryImage(projectImages.fenceDetailSpray, 1600, 1100),
