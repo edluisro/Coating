@@ -4861,8 +4861,9 @@ p {
   }
 
   .projectGallery__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    width: 100%;
   }
 
   .testimonials__inner {
@@ -5007,10 +5008,21 @@ p {
     padding: 20px;
   }
 
+  .projectGallery__card,
+  .projectGallery__highlightWrap,
+  .projectGallery__highlight {
+    width: 100%;
+    max-width: 100%;
+  }
+
   .projectGallery__highlight h3 {
     display: grid;
     gap: 8px;
-    font-size: 2rem;
+    font-size: clamp(1.65rem, 8vw, 2rem);
+  }
+
+  .projectGallery__highlight h3 span {
+    white-space: normal;
   }
 
   .lightbox {
