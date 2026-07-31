@@ -5482,19 +5482,22 @@ p {
   }
 
   .testimonials__trustList,
-  .processTimeline__expectationsList {
+  .processTimeline__expectationsList,
+  .finalCta__benefits {
     text-align: left;
   }
 
   .testimonials__trustList li,
   .testimonials__trustList li :where(span, strong),
   .processTimeline__expectationItem,
-  .processTimeline__expectationItem span:last-child {
+  .processTimeline__expectationItem span:last-child,
+  .finalCta__benefits li {
     text-align: left;
   }
 
   .testimonials__trustList li,
-  .processTimeline__expectationItem {
+  .processTimeline__expectationItem,
+  .finalCta__benefits li {
     justify-content: flex-start;
   }
 }
