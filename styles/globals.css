@@ -4957,11 +4957,11 @@ p {
   }
 
   .leadPopup__copy {
-    text-align: left;
+    text-align: center;
   }
 
   .leadPopup__trust {
-    justify-items: start;
+    justify-items: center;
   }
 
   .leadPopup__form {
