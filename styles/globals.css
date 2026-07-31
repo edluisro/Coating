@@ -2683,12 +2683,11 @@ p {
 }
 
 .services__meta {
-  display: grid;
+  display: flex;
   align-items: center;
-  justify-items: center;
   gap: 10px;
   margin-bottom: 18px;
-  text-align: center;
+  flex-wrap: wrap;
 }
 
 .services__featuredNumber,
@@ -5363,8 +5362,11 @@ p {
   }
 
   .services__item .services__meta {
+    display: grid;
+    justify-items: center;
     gap: 6px;
     margin-bottom: 10px;
+    text-align: center;
   }
 
   .services__itemNumber {
