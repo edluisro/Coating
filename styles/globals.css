@@ -4784,6 +4784,27 @@ p {
     grid-template-columns: 1fr 1fr;
   }
 
+  .footer,
+  .footer__grid,
+  .footer__bottom {
+    text-align: center;
+  }
+
+  .footer__grid {
+    justify-items: center;
+  }
+
+  .footer__grid > div {
+    display: grid;
+    justify-items: center;
+    max-width: 560px;
+  }
+
+  .footer p {
+    max-width: 62ch;
+    margin-inline: auto;
+  }
+
   .applications__industryTabList,
   .applications__industryList {
     grid-template-columns: repeat(2, minmax(0, 1fr));
