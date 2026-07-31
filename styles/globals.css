@@ -5128,12 +5128,16 @@ p {
 
   .whatIsElectrostatic__benefits,
   .serviceAreas__cities,
-  .serviceAreas__partnerList,
   .applications__grid,
   .applications__industryList,
   .processTimeline__steps,
   .processTimeline__expectationsList {
     grid-template-columns: 1fr;
+  }
+
+  .serviceAreas__partnerList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 16px;
   }
 
   .applicationCard {
