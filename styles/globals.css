@@ -2683,11 +2683,12 @@ p {
 }
 
 .services__meta {
-  display: flex;
+  display: grid;
   align-items: center;
+  justify-items: center;
   gap: 10px;
   margin-bottom: 18px;
-  flex-wrap: wrap;
+  text-align: center;
 }
 
 .services__featuredNumber,
