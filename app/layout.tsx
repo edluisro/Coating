@@ -15,6 +15,8 @@ const siteUrl = "https://tempserver.fastansweragency.com/electro";
 const siteTitle = "Florida ElectroStatic";
 const siteDescription =
   "Professional on-site electrostatic painting services for commercial and industrial metal restoration across South Florida.";
+const navbarLogoUrl =
+  "https://res.cloudinary.com/wqsitnyu/image/upload/v1785449990/ChatGPT_Image_30_jul_2026__06_12_13_p.m.-removebg-preview_t2r0pe.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -23,6 +25,11 @@ export const metadata: Metadata = {
     template: `%s | ${siteTitle}`,
   },
   description: siteDescription,
+  icons: {
+    icon: navbarLogoUrl,
+    shortcut: navbarLogoUrl,
+    apple: navbarLogoUrl,
+  },
   openGraph: {
     title: siteTitle,
     description: siteDescription,
