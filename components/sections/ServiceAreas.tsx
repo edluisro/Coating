@@ -149,7 +149,7 @@ function SouthFloridaMap() {
           <path
             d="M324 188c40 28 61 66 62 113 1 56-20 125-63 207"
             fill="none"
-            stroke="rgba(244, 123, 32, 0.28)"
+            stroke="rgba(252, 74, 0, 0.28)"
             strokeWidth="16"
             strokeLinecap="round"
           />
