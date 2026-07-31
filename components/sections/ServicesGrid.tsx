@@ -34,8 +34,6 @@ const services = [
 ];
 
 export function ServicesGrid() {
-  const [featuredService, ...secondaryServices] = services;
-
   return (
     <section className="services section section--alt" id="servicios" aria-labelledby="services-title">
       <div className="container">
@@ -68,25 +66,12 @@ export function ServicesGrid() {
           </article>
 
           <div className="services__showcase">
-            <article className="services__featured card">
-              <div className="services__featuredBackdrop" aria-hidden="true" />
-              <div className="services__meta">
-                <span className="services__featuredNumber">01</span>
-                <span className="services__serviceLabel">{featuredService.label}</span>
-              </div>
-              <h3>{featuredService.title}</h3>
-              <p>{featuredService.text}</p>
-              <a className="services__serviceLink" href="#contacto">
-                Request estimate
-              </a>
-            </article>
-
             <Reveal className="services__grid" stagger={80}>
-              {secondaryServices.map((service, index) => (
+              {services.map((service, index) => (
                 <article className="services__item card" key={service.title}>
                   <div className="services__meta">
                     <span className="services__itemNumber" aria-hidden="true">
-                      {String(index + 2).padStart(2, "0")}
+                      {String(index + 1).padStart(2, "0")}
                     </span>
                     <span className="services__serviceLabel">{service.label}</span>
                   </div>
