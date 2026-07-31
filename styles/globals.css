@@ -5480,6 +5480,23 @@ p {
   .finalCta .btn {
     margin-inline: auto;
   }
+
+  .testimonials__trustList,
+  .processTimeline__expectationsList {
+    text-align: left;
+  }
+
+  .testimonials__trustList li,
+  .testimonials__trustList li :where(span, strong),
+  .processTimeline__expectationItem,
+  .processTimeline__expectationItem span:last-child {
+    text-align: left;
+  }
+
+  .testimonials__trustList li,
+  .processTimeline__expectationItem {
+    justify-content: flex-start;
+  }
 }
 
 @media (min-width: 520px) and (max-width: 1023px) {
