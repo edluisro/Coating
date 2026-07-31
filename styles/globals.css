@@ -5278,8 +5278,8 @@ p {
 
   .processTimeline__line {
     width: 2px;
-    height: 100%;
-    min-height: 280px;
+    height: 70px;
+    min-height: 70px;
     margin: 0 auto;
   }
 
