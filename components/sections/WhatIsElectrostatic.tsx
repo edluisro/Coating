@@ -209,7 +209,7 @@ export function WhatIsElectrostatic() {
             <div className="whatIsElectrostatic__videoShell">
               <Image
                 className="whatIsElectrostatic__video"
-                src="https://res.cloudinary.com/wqsitnyu/image/upload/c_fill,g_auto,w_1200,h_1400,f_auto,q_auto/v1785453792/call_2qTFOkuah58EM7rkYQEwLfso_eyy9bi.png"
+                src="https://res.cloudinary.com/wqsitnyu/image/upload/c_fill,g_auto,w_1200,h_1400,f_auto,q_auto/v1785541764/exec-c2e8dc18-a4c6-4734-bb60-4c1e3ab6d997_djyxx1.png"
                 alt="Technician using electrostatic spray equipment on a metal surface."
                 fill
                 sizes="(max-width: 1023px) 100vw, 42vw"

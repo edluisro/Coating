@@ -17,7 +17,7 @@ export function FinalCta() {
     <section className="finalCta" id="final-cta" aria-labelledby="final-cta-title">
       <Image
         className="finalCta__image"
-        src="https://res.cloudinary.com/wqsitnyu/image/upload/c_fill,g_auto,w_1800,h_1100,f_auto,q_auto/v1785453786/call_aBYTAeH5UUqgtxIrzjjWPIKa_ybelag.png"
+        src="https://res.cloudinary.com/wqsitnyu/image/upload/c_fill,g_auto,w_1800,h_1100,f_auto,q_auto/v1785541763/exec-af482c8c-3af0-4585-9397-df74dfba537b_rk9kiu.png"
         alt=""
         fill
         sizes="100vw"

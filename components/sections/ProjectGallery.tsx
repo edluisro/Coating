@@ -18,17 +18,17 @@ type Project = {
 };
 
 const projectImages = {
-  fenceSprayClose: "v1785453800/call_CYw1IdLPL1YvyitubPkoYEXe_fw11hf.png",
-  commercialDoors: "v1785453796/call_q3dXZpHJCGv1BXsuP9U8amk7_inji5q.png",
-  storefrontApplication: "v1785453792/call_2qTFOkuah58EM7rkYQEwLfso_eyy9bi.png",
-  fenceDetailSpray: "v1785453792/call_UaTQEJmJUzJnqQv9AcQNnyCN_egncwd.png",
-  balconyBeforeAfter: "v1785453792/call_J78GjGic7zymioGKtuBsJqs9_huznz6.png",
-  finishedEntranceRails: "v1785453792/call_3FcCgLPG5swFP01Wt9e8lEQy_bde5el.png",
-  balconyApplication: "v1785453790/call_IET0NPhTAdEgsYsEZKDuDaBU_bgayyh.png",
-  liftStorefront: "v1785453788/call_etgNVj8Icng4alrbi29nutz6_uzmp2t.png",
-  stairRailingApplication: "v1785453788/call_HkWTJgcJXNBk3S3S3pX8EM14_lzhe26.png",
-  exteriorFenceApplication: "v1785453789/call_0kmEUY5N9NQEayiMENG4BV2m_fy5pam.png",
-  finishedFenceGate: "v1785453786/call_aBYTAeH5UUqgtxIrzjjWPIKa_ybelag.png",
+  fenceSprayClose: "v1785541766/exec-5999bba1-8b60-4bcb-a07c-8436342b1ef6_pxljsj.png",
+  commercialDoors: "v1785541767/exec-2e76823a-be88-4907-b6d5-74cd4ab7784b_li6lws.png",
+  storefrontApplication: "v1785541764/exec-7027f270-8845-4b90-a1e0-99a99667c120_uugpr0.png",
+  fenceDetailSpray: "v1785541771/exec-ff873891-d8bc-44f2-a8da-9b5c551f05be_lxrtcc.png",
+  balconyBeforeAfter: "v1785541766/exec-fa9f28ba-b704-4203-af50-fc94b7db07a5_uhztpm.png",
+  finishedEntranceRails: "v1785541774/exec-893583be-4414-45d4-9fd2-7b11549f0344_aehcu4.png",
+  balconyApplication: "v1785541774/exec-aea61c1c-6dd4-45d9-842f-83439f563aaa_fmzdcj.png",
+  liftStorefront: "v1785541766/exec-d5f18258-8652-4c03-913d-644d6cdabd8f_qlteyu.png",
+  stairRailingApplication: "v1785541774/exec-893583be-4414-45d4-9fd2-7b11549f0344_aehcu4.png",
+  exteriorFenceApplication: "v1785541774/exec-aea61c1c-6dd4-45d9-842f-83439f563aaa_fmzdcj.png",
+  finishedFenceGate: "v1785541763/exec-8a62561a-c159-4aed-bb5f-c70595411e76_avbx38.png",
 };
 
 const cloudinaryImage = (path: string, width: number, height: number) =>

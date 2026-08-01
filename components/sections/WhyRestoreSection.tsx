@@ -68,17 +68,17 @@ const benefits = [
 const stackedImages = [
   {
     className: "whyRestore__card--1",
-    src: "https://res.cloudinary.com/wqsitnyu/image/upload/c_fill,g_auto,w_900,h_1100,f_auto,q_auto/v1785453790/call_IET0NPhTAdEgsYsEZKDuDaBU_bgayyh.png",
+    src: "https://res.cloudinary.com/wqsitnyu/image/upload/c_fill,g_auto,w_900,h_1100,f_auto,q_auto/v1785541766/exec-fa9f28ba-b704-4203-af50-fc94b7db07a5_uhztpm.png",
     alt: "Technician restoring exterior metal railings on-site with electrostatic painting equipment.",
   },
   {
     className: "whyRestore__card--2",
-    src: "https://res.cloudinary.com/wqsitnyu/image/upload/c_fill,g_auto,w_900,h_1100,f_auto,q_auto/v1785453796/call_q3dXZpHJCGv1BXsuP9U8amk7_inji5q.png",
+    src: "https://res.cloudinary.com/wqsitnyu/image/upload/c_fill,g_auto,w_900,h_1100,f_auto,q_auto/v1785541771/exec-0a1d3922-087a-46fe-b0e4-543201a65049_bgw3wn.png",
     alt: "Professional coating application on commercial metal doors in a controlled work area.",
   },
   {
     className: "whyRestore__card--3",
-    src: "https://res.cloudinary.com/wqsitnyu/image/upload/c_fill,g_auto,w_900,h_1100,f_auto,q_auto/v1785453800/call_CYw1IdLPL1YvyitubPkoYEXe_fw11hf.png",
+    src: "https://res.cloudinary.com/wqsitnyu/image/upload/c_fill,g_auto,w_900,h_1100,f_auto,q_auto/v1785541771/exec-ff873891-d8bc-44f2-a8da-9b5c551f05be_lxrtcc.png",
     alt: "Close-up electrostatic spray application on a black metal fence.",
   },
 ];
