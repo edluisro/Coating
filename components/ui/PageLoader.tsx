@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const logoSrc =
-  "https://res.cloudinary.com/wqsitnyu/image/upload/v1785031515/ChatGPT_Image_25_jul_2026_10_04_58_p.m._rrjio0.png";
+  "https://res.cloudinary.com/wqsitnyu/image/upload/v1785449990/ChatGPT_Image_30_jul_2026__06_12_13_p.m.-removebg-preview_t2r0pe.png";
 
 export function PageLoader() {
   const [isMounted, setIsMounted] = useState(false);
