@@ -28,7 +28,7 @@ export function FinalCta() {
         <Reveal className="finalCta__content" variant="fade-up" stagger={90}>
           <div className="finalCta__heading stack-md">
             <h2 id="final-cta-title">Ready to Restore Your Metal Instead of Replacing It?</h2>
-            <h3>Professional Electrostatic Painting for Commercial & Industrial Properties Across South Florida.</h3>
+            <h3>Professional Electrostatic Painting for Commercial &amp; Industrial Properties Across South Florida.</h3>
             <div className="finalCta__body stack-md">
               <p>
                 Whether you&apos;re restoring a single storefront, refinishing an entire commercial property or
@@ -62,24 +62,6 @@ export function FinalCta() {
               Call Us Today
             </Button>
           </div>
-
-          <address className="finalCta__contact">
-            <strong>Florida ElectroStatic</strong>
-            <span>Miami, Florida</span>
-            <a href="tel:+13050000000">Phone: (305) XXX-XXXX</a>
-            <a href="mailto:info@floridaelectrostatic.com">Email: info@floridaelectrostatic.com</a>
-          </address>
-
-          <div className="finalCta__serviceArea">
-            <span>Service Area:</span>
-            <strong>Miami-Dade • Broward • Palm Beach</strong>
-          </div>
-
-          <p className="finalCta__signature">
-            <span>Protect.</span>
-            <span>Perform.</span>
-            <span>Last.</span>
-          </p>
         </Reveal>
       </div>
     </section>
