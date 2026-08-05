@@ -19,7 +19,7 @@ type Project = {
 
 const projectImages = {
   fenceSprayClose: "v1785541766/exec-5999bba1-8b60-4bcb-a07c-8436342b1ef6_pxljsj.png",
-  commercialDoors: "v1785883729/ChatGPT_Image_4_ago_2026_06_27_24_p.m._rfp4mi.png",
+  commercialDoors: "v1785541763/exec-8a62561a-c159-4aed-bb5f-c70595411e76_avbx38.png",
   storefrontApplication: "v1785453788/call_etgNVj8Icng4alrbi29nutz6_uzmp2t.png",
   fenceDetailSpray: "v1785541771/exec-ff873891-d8bc-44f2-a8da-9b5c551f05be_lxrtcc.png",
   balconyBeforeAfter: "v1785541766/exec-fa9f28ba-b704-4203-af50-fc94b7db07a5_uhztpm.png",
