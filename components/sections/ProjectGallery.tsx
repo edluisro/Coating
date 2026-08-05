@@ -26,7 +26,7 @@ const projectImages = {
   finishedEntranceRails: "v1785541774/exec-893583be-4414-45d4-9fd2-7b11549f0344_aehcu4.png",
   balconyApplication: "v1785541774/exec-aea61c1c-6dd4-45d9-842f-83439f563aaa_fmzdcj.png",
   liftStorefront: "v1785541766/exec-d5f18258-8652-4c03-913d-644d6cdabd8f_qlteyu.png",
-  stairRailingApplication: "v1785883736/ChatGPT_Image_4_ago_2026_06_13_42_p.m._heexxc.png",
+  stairRailingApplication: "v1785453788/call_etgNVj8Icng4alrbi29nutz6_uzmp2t.png",
   exteriorFenceApplication: "v1785541774/exec-aea61c1c-6dd4-45d9-842f-83439f563aaa_fmzdcj.png",
   finishedFenceGate: "v1785541763/exec-8a62561a-c159-4aed-bb5f-c70595411e76_avbx38.png",
 };
